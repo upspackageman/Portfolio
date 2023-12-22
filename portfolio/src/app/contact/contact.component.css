@@ -1,0 +1,166 @@
+@-webkit-keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+  ::ng-deep app-navbar a{
+    color:#fff !important;
+  }
+  
+  ::ng-deep app-navbar #nav-icon2 span{
+    background:#fff !important;
+  }
+  
+  ::ng-deep app-navbar a{
+    color:#fff !important;
+  }
+  
+  ::ng-deep app-navbar a:hover{
+    color: #e0d9d9 !important;
+  }
+  
+  ::ng-deep app-footer ul div{
+    display: none;
+  }
+  
+  ::ng-deep app-footer #linkedin{
+    display: none;
+  }
+  
+  ::ng-deep app-footer #email{
+    display: none;
+  }
+  
+  .puff-in-center {
+      -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+              animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  }
+  
+  #threejs-contact-container{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  #contact-main{
+    display: flex;
+    background-color: rgba(0, 0, 255, 0);
+    top:5%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    overflow-x: hidden;
+  }
+  
+  
+  .form-container{
+    position: relative;
+    width: 700px;
+    height:300px;
+    top:25%;
+    display:grid;
+  }
+  
+  
+  .form-container h3{
+    color:#fff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .contact-container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .contact-container a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 2.25rem;
+    border-radius:.4rem;
+    text-align: center;
+    border-style: solid;
+    height: fit-content;
+    width:200px;
+    align-items: center;
+  }
+  
+  .contact-container a:hover{
+    color:#e0d9d9;
+    border-color: #e0d9d9;
+  }
+  
+  #indeed{
+    padding: 10px;
+  }
+  
+  #email{
+    padding: 0px 10px 0px 10px;
+  }
+  
+  @media (max-width:480px) {
+
+    #navbarNavAltMarkup{
+      display:hidden;
+    }
+    .form-container{
+      margin-left: 5%;
+      margin-right: 3%;
+      width: 500px;
+      height:300px;
+  
+    }
+  
+    #contact-main{
+      height: 90%;
+      position: absolute;
+      overflow-x: hidden;
+    }
+  
+    .contact-container{
+      align-items: center;
+      display: flex;
+      flex-direction:column;
+  
+    }
+  
+    .form-container h3{
+      letter-spacing: 1.5px;
+      color:#fff;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  
+  
+  

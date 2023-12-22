@@ -1,0 +1,593 @@
+<div class="stars" id="threejs-about-container"></div>
+<!-- <div class="disp"></div> -->
+<div id="select-about" class="about-selection puff-in-center ">
+  <a class="btn-about" (click)="openAboutDetails(1)">
+    About Me
+  </a>
+  <a class="btn-about" (click)="openAboutDetails(2)">
+    Skills
+  </a>
+  <a class="btn-about" (click)="openAboutDetails(3)">
+    Work Experience
+  </a>
+</div>
+
+<dialog class="about-details-mobile fade-in-left" id="about-one-myDialog">
+  <a (click)="closeAboutDetails()">&#10006;</a>
+  <h2> A little about me and my background</h2>
+  <hr>
+  <div class="fade-in-top about-details-mobile-text">
+    <p>
+      Welcome to my digital space. I am a seasoned Software Engineer with a strong foundation in HTML and JavaScript development, specializing in microservices architecture, database optimization, and advanced web application enhancement. 
+    </p>
+    <p>
+      Proficient in a diverse tech stack, including C#, Python, and React, I bring a wealth of experience in delivering scalable and reliable solutions. My expertise extends to crafting efficient code structures, designing robust database schemas, and implementing CI/CD pipelines for seamless automation.
+    </p>
+    <p>
+      Explore my portfolio to witness the impact of my skills and dedication to excellence.
+    </p>
+    
+
+  </div>
+
+</dialog>
+
+<dialog class="about-details-mobile fade-in-left" id="about-two-myDialog">
+  <a (click)="closeAboutDetails()">&#10006;</a>
+  <h2>Skills</h2>
+  <hr>
+  <div class="fade-in-top about-details-mobile-text" id="desktopAccordion">
+    <div>
+      <h3>Programming Languages</h3>
+      <ul>
+        <li>
+          <div (click)="programDetails(1)">C#</div><span id="prog_c_mobile" class="scale-up-hor-left"
+            (click)="initHideDetails()"> Close</span>
+        </li>
+        <div id="prog_c" class="slide-in-blurred-top">
+          <p><strong>Web Development</strong> (ASP.NET):Created dynamic and scalable web applications using the
+            ASP.NET framework. ASP.NET supports both Web Forms and MVC (Model-View-Controller) patterns for web
+            development.</p>
+  
+          <p><strong>Backend Services:</strong> (ASP.NET Core) Build server-side applications, APIs, and microservices
+            using the ASP.NET Core framework. ASP.NET Core is a cross-platform, high-performance framework for
+            building modern, cloud-based, and internet-connected applications.</p>
+  
+          <p><strong> Database Applications</strong>: Interact with databases including Microsoft SQL Server, MySQL,
+            and SQLite. <br><br><span (click)="initHideDetails()"> Close</span></p>
+        </div>
+        
+        <!-- <p id="prog_c" class="slide-in-blurred-top">
+          Maecenas quis arcu consectetur, aliquet magna vel, imperdiet mi. Suspendisse tincidunt a lorem vel faucibus.
+          Fusce id commodo felis. Phasellus interdum ipsum tristique laoreet tempus. Fusce ut metus ultricies nunc
+          lacinia dictum eu a massa. Etiam sodales, sapien vulputate condimentum semper, erat nibh sagittis risus, at
+          rutrum orci ipsum vitae erat. Integer vehicula maximus congue. In eu lorem sed mi fringilla luctus vel sit
+          amet purus. Pellentesque non molestie libero, at tincidunt nulla. Etiam eget felis libero.
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p> -->
+        <li>
+          <div (click)="programDetails(2)">PHP</div><span id="prog_php_mobile" (click)="initHideDetails()"> Close</span>
+        </li>
+        <div id="prog_php" class="slide-in-blurred-top">
+          <p>
+            Created APIs (Application Programming Interfaces) for communication between different software applications to create data exchange between the server and client applications.
+          </p> 
+          <p>
+            Command-Line Scripting: Automated tasks and perform system-level operations to generate API calls or ETL.
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+        </div>    
+        <li>
+          <div (click)="programDetails(3)">JavaScript</div><span id="prog_js_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <div id="prog_js" class="slide-in-blurred-top">
+          <p><strong>Front-End Web Development:</strong> Built interactive and dynamic user interfaces on the client side. It is used to manipulate the Document Object Model (DOM), handle user events, and make asynchronous requests to servers. Asynchronous operations, such as making AJAX requests or fetching data from APIs.
+          </p>
+          <p><strong>Web Frameworks:</strong>  React, Angular, and Vue.js.
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+        </div>
+        
+        <li>
+          <div (click)="programDetails(4)">TypeScript</div><span id="prog_ts_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <div id="prog_ts" class="slide-in-blurred-top">
+          <p><strong></strong>Building large and complex applications in conjunction with popular front-end frameworks like React, Angular.</p>
+            <p><strong></strong>Building backend services and APIs to provide scalable and maintainable server-side code. In addition to defining and enforcing data models with static typing.
+              <br><br><span (click)="initHideDetails()"> Close</span>
+            </p>
+        </div>
+      
+       <li style="display:none">
+          <div (click)="programDetails(5)">Angular</div><span id="prog_ang_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li> 
+        <p id="prog_ang" class="slide-in-blurred-top" style="display:none">
+          
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+        <li>
+          <div (click)="programDetails(6)">Python</div><span id="prog_py_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <div id="prog_py" class="slide-in-blurred-top">
+          <p>Proficient in automation, scripting, and backend development, with a focus on spearheading initiatives to streamline tasks and enhance operational efficiency.</p>
+            <p>Experienced in crafting robust server-side logic and APIs for web applications, particularly skilled in utilizing Python and integrating with FastAPI.</p>
+            <p>Versatile in leveraging a comprehensive technology stack, including Python, C#, .NET Core, WebAPI, and FastAPI, to deliver innovative and tailored solutions.</p>
+            <p>Demonstrated ability to lead automation and scripting efforts, consistently contributing to streamlined workflows and delivering impactful solutions for diverse clients.
+              <br><br><span (click)="initHideDetails()"> Close</span>
+            </p>
+        </div>
+        <p id="prog_py" class="slide-in-blurred-top">
+         
+          
+        </p>
+        <li style="display:none">
+          <div (click)="programDetails(7)">React</div><span id="prog_jsx_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <p style="display:none" id="prog_jsx" class="slide-in-blurred-top">
+          
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+        <li style="display:none">
+          <div (click)="programDetails(8)">Node.JS</div><span id="prog_node_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <p style="display:none" id="prog_node" class="slide-in-blurred-top">
+         
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+
+      </ul>
+
+      <h3>Testing</h3>
+      <ul>
+        <li>
+          <div (click)="testDetails(1)">Cypress</div><span id="test_cypress_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <div id="test_cypress" class="slide-in-blurred-top">
+          <p>
+            End-to-end testing of web applications (KnowledgeCity) simulating user interactions with the application and verifying that the application behaves as expected. In addition, intercept and control network requests for API interactions, handling responses, and network conditions.
+          </p>
+          <p>
+            Creating Page Object Model to enhance the maintainability and readability to simulate user interactions such as clicking buttons, filling out forms, and navigating between pages throughout the LMS (Learning Management System). 
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+        </div>
+        
+        <li>
+          <div (click)="testDetails(2)">Selenium</div><span id="test_selen_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <div id="test_selen" class="slide-in-blurred-top">
+          <p>Web scraping, extracting data from websites by interacting with web elements.
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+          
+        </div>
+        <li style="display:none">
+          <div (click)="testDetails(3)">Jenkins</div> <span id="test_jenkins_mobile" (click)="initHideDetails()">
+            Close</span>
+        </li>
+        <p style="display:none" id="test_jenkins" class="slide-in-blurred-top">
+          
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+        <li>
+          <div (click)="testDetails(4)">Equivalence Partitioning</div><span id="test_equiv_mobile"
+            (click)="initHideDetails()"> Close</span>
+        </li>
+        <div id="test_equiv" class="slide-in-blurred-top">
+          <p><strong>Input Validation Testing:</strong> Applied input fields where certain values are expected to produce similar behavior in the system</p>
+          <p><strong>Boundary Value Analysis:</strong> Values on the edges of partitions to uncover errors due to the system's handling of boundaries.</p>
+          <p><strong>Testing Numeric Ranges:</strong> Identify different groups of values, such as those within the valid range, just above the valid range, and just below the valid range.</p>
+          <p><strong>User Authentication:</strong> Test different groups of inputs, such as valid usernames and passwords, invalid usernames, and invalid passwords; to ensure that the authentication system responds appropriately to different types of input.</p>
+          <p><strong>Configuration Settings:</strong> Test LMS configuration settings in an application, where different partitions represent valid and invalid configurations to ensure that the application behaves consistently for different configurations.
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+          
+        </div>
+        <li>
+          <div (click)="testDetails(5)">Use Case Testing</div><span id="test_usecase_mobile"
+            (click)="initHideDetails()"> Close</span>
+        </li>
+        <div id="test_usecase" class="slide-in-blurred-top">
+          <p><strong>Requirements Validation: </strong>Validate and verify whether the system meets the specified requirements as outlined in the use cases by creating test cases based on each use case, ensuring that the system behaves as expected in various scenarios.
+          </p>
+          <p><strong>Functional Testing: </strong>Ensures the correct execution of specific functionalities in the system to cover the various paths and conditions defined in each use case.
+          </p>
+          <p><strong>Scenario-based Testing: </strong>Test end-to-end scenarios that represent real-world user interactions for each
+            use case to  define a specific scenario, and create test cases to validate the flow of events.
+          </p>
+          <p><strong>Integration Testing: </strong>Integration of different system components or modules within the context of specific use cases to ensure that the integrated system behaves correctly when handling the interactions described in the use cases.
+            <br><br><span (click)="initHideDetails()"> Close</span>
+          </p>
+          
+        </div>
+        <li style="display:none">
+          <div (click)="testDetails(6)">Decision Table and State Transition Testing</div> <span id="test_state_mobile"
+            (click)="initHideDetails()"> Close</span>
+        </li>
+        <p style="display:none" id="test_state" class="slide-in-blurred-top">
+          
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+        <li style="display:none">
+          <div (click)="testDetails(7)">Cross-Browser Compatibility and Responsiveness</div><span id="test_cross_mobile"
+            (click)="initHideDetails()"> Close</span>
+        </li>
+        <p style="display:none" id="test_cross" class="slide-in-blurred-top">
+         
+          <br><br><span (click)="initHideDetails()"> Close</span>
+        </p>
+      </ul>
+    </div>
+
+
+
+
+
+  </div>
+
+  <div id="accordionMobile">
+    <div class="accordion fade-in-top about-details-mobile-text-tab" id="accordion">
+      <h5>Programming Languages</h5>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cSharp"
+            aria-expanded="false" aria-controls="cSharp">
+            C#
+          </button>
+        </h2>
+        <div id="cSharp" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p><strong>Web Development</strong> (ASP.NET):Created dynamic and scalable web applications using the
+              ASP.NET framework. ASP.NET supports both Web Forms and MVC (Model-View-Controller) patterns for web
+              development.</p>
+
+            <p><strong>Backend Services</strong> (ASP.NET Core): Build server-side applications, APIs, and microservices
+              using the ASP.NET Core framework. ASP.NET Core is a cross-platform, high-performance framework for
+              building modern, cloud-based, and internet-connected applications.</p>
+
+            <p><strong> Database Applications</strong>: Interact with databases including Microsoft SQL Server, MySQL,
+              and SQLite.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#php"
+            aria-expanded="false" aria-controls="php">
+            PHP
+          </button>
+        </h2>
+        <div id="php" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p>
+              Created APIs (Application Programming Interfaces) for communication between different software applications to create data exchange between the server and client applications.
+            </p> 
+            <p>
+              Command-Line Scripting: Automated tasks and perform system-level operations to generate API calls or ETL.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#js"
+            aria-expanded="false" aria-controls="js">
+            JavaScript
+          </button>
+        </h2>
+        <div id="js" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p><strong>Front-End Web Development:</strong> Built interactive and dynamic user interfaces on the client side. It is used to manipulate the Document Object Model (DOM), handle user events, and make asynchronous requests to servers. Asynchronous operations, such as making AJAX requests or fetching data from APIs.
+            </p>
+            <p><strong>Web Frameworks:</strong> JavaScript is the foundation for many front-end web frameworks and libraries. Popular frameworks like React, Angular, and Vue.js.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tscript"
+            aria-expanded="false" aria-controls="tscript">
+            TypeScript
+          </button>
+        </h2>
+        <div id="tscript" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p><strong></strong>Building large and complex applications in conjunction with popular front-end frameworks like React, Angular.</p>
+            <p><strong></strong>Building backend services and APIs to provide scalable and maintainable server-side code. In addition to defining and enforcing data models with static typing.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ang"
+            aria-expanded="false" aria-controls="ang">
+            Angular
+          </button>
+        </h2>
+        <div id="ang" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
+            plugin adds the appropriate classes that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions.
+            You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that
+            just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit
+            overflow.
+          </div>
+        </div>
+      </div> -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#python"
+            aria-expanded="false" aria-controls="python">
+            Python
+          </button>
+        </h2>
+        <div id="python" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p>Proficient in automation, scripting, and backend development, with a focus on spearheading initiatives to streamline tasks and enhance operational efficiency.</p>
+            <p>Experienced in crafting robust server-side logic and APIs for web applications, particularly skilled in utilizing Python and integrating with FastAPI.</p>
+            <p>Versatile in leveraging a comprehensive technology stack, including Python, C#, .NET Core, WebAPI, and FastAPI, to deliver innovative and tailored solutions.</p>
+            <p>Demonstrated ability to lead automation and scripting efforts, consistently contributing to streamlined workflows and delivering impactful solutions for diverse clients.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#react"
+            aria-expanded="false" aria-controls="react">
+            React
+          </button>
+        </h2>
+        <div id="react" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p><strong></strong></p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nodejs"
+            aria-expanded="false" aria-controls="nodejs">
+            NodeJS
+          </button>
+        </h2>
+        <div id="nodejs" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <p><strong></strong></p>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="accordion fade-in-top about-details-mobile-text-tab" id="accordion2">
+      <h5>Testing</h5>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cypress"
+            aria-expanded="false" aria-controls="cypress">
+            Cypress
+          </button>
+        </h2>
+        <div id="cypress" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p>
+              End-to-end testing of web applications (KnowledgeCity) simulating user interactions with the application and verifying that the application behaves as expected. In addition, intercept and control network requests for API interactions, handling responses, and network conditions.
+            </p>
+            <p>
+              Creating Page Object Model to enhance the maintainability and readability to simulate user interactions such as clicking buttons, filling out forms, and navigating between pages throughout the LMS (Learning Management System). 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#selenium"
+            aria-expanded="false" aria-controls="selenium">
+            Selenium
+          </button>
+        </h2>
+        <div id="selenium" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p>Web scraping, extracting data from websites by interacting with web elements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#partition"
+            aria-expanded="false" aria-controls="partition">
+            Equivalence Partitioning
+          </button>
+        </h2>
+        <div id="partition" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p><strong>Input Validation Testing:</strong> Applied input fields where certain values are expected to produce similar behavior in the system</p>
+            <p><strong>Boundary Value Analysis:</strong> Values on the edges of partitions to uncover errors due to the system's handling of boundaries.</p>
+            <p><strong>Testing Numeric Ranges:</strong> Identify different groups of values, such as those within the valid range, just above the valid range, and just below the valid range.</p>
+            <p><strong>User Authentication:</strong> Test different groups of inputs, such as valid usernames and passwords, invalid usernames, and invalid passwords; to ensure that the authentication system responds appropriately to different types of input.</p>
+            <p><strong>Configuration Settings:</strong>Test LMS configuration settings in an application, where different partitions represent valid and invalid configurations to ensure that the application behaves consistently for different configurations.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#transition" aria-expanded="false" aria-controls="transition">
+            Decision Table and State Transition Testing
+          </button>
+        </h2>
+        <div id="transition" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p><strong></strong></p>
+          </div>
+        </div>
+      </div> -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#usecase"
+            aria-expanded="false" aria-controls="usecase">
+            Use Case Testing
+          </button>
+        </h2>
+        <div id="usecase" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p><strong>Requirements Validation: </strong>Validate and verify whether the system meets the specified requirements as outlined in the use cases by creating test cases based on each use case, ensuring that the system behaves as expected in various scenarios.
+            </p>
+            <p><strong>Functional Testing: </strong>Ensures the correct execution of specific functionalities in the system to cover the various paths and conditions defined in each use case.
+            </p>
+            <p><strong>Scenario-based Testing:</strong>Test end-to-end scenarios that represent real-world user interactions for each
+              use case to  define a specific scenario, and create test cases to validate the flow of events.
+            </p>
+            <p><strong>Integration Testing: </strong>Integration of different system components or modules within the context of specific use cases to ensure that the integrated system behaves correctly when handling the interactions described in the use cases.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cross"
+            aria-expanded="false" aria-controls="cross">
+            Cross-Browser Compatibility and Responsiveness
+          </button>
+        </h2>
+        <div id="cross" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+          <div class="accordion-body">
+            <p><strong></strong></p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</dialog>
+
+<dialog class="about-details-mobile fade-in-left" id="about-three-myDialog">
+  <a (click)="closeAboutDetails()">&#10006;</a>
+  <h2>Work Experience</h2>
+  <hr>
+  <div class="fade-in-top work-details-mobile-text">
+    <div class="history">
+      <div class="date">
+        <h4>FEBRUARY 2021 - PRESENT</h4>
+      </div>
+      <div class="company">
+        <h4>Burke Real Estate Consultant, San Diego CA — Full Stack Developer (Contract)</h4>
+        <ul>
+          <li>Independently developed a scalable microservices architecture for improved system efficiency.</li>
+          <li>Utilized C#, .NET Core, EntityFrameworks, Python, WebAPI, REST, Microservices, SQL, CI/CD, and Angular, Node.JS for development tasks.</li>
+          <li>Developed and organized web applications, employing efficient code structure and file separation practices. </li>
+          <li>Developed functional databases, applications, and servers to support website operations on the back end. </li>
+          <li>Created functional databases, applications, and servers to support website operations on the back end.</li>
+          <li>Created CI/CD pipelines and workflows(GitLab) for automation.</li>
+          <li>Significant experience with relational databases such as SQL Server, Postgres, etc.</li>
+          <li>Work independently and collaboratively with the Decision maker</li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="history">
+      <div class="date">
+        <h4>JULY 2020 - PRESENT</h4>
+      </div>
+      <div class="company">
+        <h4>KnowledgeCity, Carlsbad CA — Senior QA Analyst</h4>
+        <ul>
+          <li>Collaborated with the development team to streamline database operations and ensure optimal efficiency.</li>
+          <li>Build web applications for KnowledgeCity internal customers/departments to generate SCORM files using Javascript, PHP, AWS S3, and MySQL.</li>
+          <li>Collaborated with the Development, Sales, Customer Service, and Localization departments to move forward with new tasks to relieve technical debt.</li>
+          <li>Developed and implemented SQL scripts and ETL processes using Python and PHP. </li>
+          <li>Tested software to ensure responsiveness, efficiency, and code integrity, identifying and escalating/resolving coding issues promptly.</li>
+          <li>Assist team meetings, recommended technologies, assigned tasks, and maintained repositories.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="history">
+      <div class="date">
+        <h4>APRIL 2020 - FEBRUARY 2021</h4>
+      </div>
+      <div class="company">
+        <h4>Urgent Care Bumper Repair, Oceanside, CA — Web Developer(Contract)</h4>
+        <ul>
+          <li>Spearheaded UX and SEO initiatives, resulting in a 25% increase in website traffic.</li>
+          <li>Introduced performance optimizations in React applications, reducing page load times by 20%.</li>
+          <li>Led the implementation of a new feature, leading to a 15% improvement in user engagement.</li>
+          <li>Develop React, TypeScript, Node, and PHP.</li>
+          <li>Spearheaded UX and SEO-oriented objectives for customer retention.</li>
+          <li>Meet with management to gather requirements, define tasks, scope sprints, review pull requests, and support team members.</li>
+          <li>Designed user-based interactions, employing effective front-end architecture for intuitive user experiences.</li>
+          <li>Recommended technologies, assigned tasks, and maintained repository.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="history">
+      <div class="date">
+        <h4>MAY 2019 - PRESENT</h4>
+      </div>
+      <div class="company">
+        <h4>KnowledgeCity, Carlsbad CA — QA Software Test Engineer</h4>
+        <ul>
+          <li>Automated testing processes using Cypress, reducing testing time.</li>
+          <li>Conducted testing, problem tracking, and resolution for software tasks. </li>
+          <li>Performed test automation using Selenium and Cypress.</li>
+          <li>Created test cases, mind maps, and equivalence partitioning for testing activities. </li>
+          <li>Troubleshoot, and test application code to successfully deliver project-based work.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="history">
+      <div class="date">
+        <h4>JULY 2016 - MAY 2019</h4>
+      </div>
+      <div class="company">
+        <h4>Best Buy, Encinitas — Sales Connected Home</h4>
+        <ul>
+          <li>Use interpersonal and communication skills to engage customers using selling skills to build complex and connected solutions in a fast-paced environment.</li>
+          <li>Accumulated and applied the appropriate knowledge and expertise through continuous learning and self-interpersonal skills to mentor coworkers to provide multiple customers with outstanding shopping experiences. </li>
+        </ul>
+      </div>
+    </div>
+    <div class="history">
+      <div class="date">
+        <h4>JULY 2015 - FEBRUARY 2017</h4>
+      </div>
+      <div class="company">
+        <h4>Instructional and Information Technology Services (IITS) CSUSM, SAN MARCOS CA — IT Support Engineer</h4>
+        <ul>
+          <li>Running Linux/Windows scripts to assist in the debugging of customer hardware.</li>
+          <li>Install TCP/IP printers with Linux/Windows/MacOS.</li>
+          <li>C# .NET, WebForms, and WPF.  </li>
+          <li>Provide the customers with technical and troubleshooting assistance related to computer hardware and software, mobile devices, and other tech tools and products for the  client.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <p>
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit velit porta aliquet vulputate. Sed porta diam vel felis maximus condimentum. Phasellus varius mi nisl, vitae posuere ipsum blandit id. Nulla facilisi. Nulla nec elementum erat. Proin facilisis consequat libero a bibendum. Nulla pellentesque risus est, efficitur condimentum neque euismod vitae. Integer interdum, sem in consectetur sagittis, ex nisl placerat ipsum, id luctus velit nibh quis justo. Morbi porta leo quis mi feugiat auctor. Etiam vel urna turpis. Etiam rhoncus rutrum dui ac consectetur. Nam rhoncus odio sapien, vitae ullamcorper mi viverra ut. Integer interdum luctus lobortis.
+     </p>
+     <p>
+       Maecenas quis arcu consectetur, aliquet magna vel, imperdiet mi. Suspendisse tincidunt a lorem vel faucibus. Fusce id commodo felis. Phasellus interdum ipsum tristique laoreet tempus. Fusce ut metus ultricies nunc lacinia dictum eu a massa. Etiam sodales, sapien vulputate condimentum semper, erat nibh sagittis risus, at rutrum orci ipsum vitae erat. Integer vehicula maximus congue. In eu lorem sed mi fringilla luctus vel sit amet purus. Pellentesque non molestie libero, at tincidunt nulla. Etiam eget felis libero.
+     </p>
+     <p>
+       Proin erat mauris, elementum ac finibus sit amet, vehicula a tortor. Donec lectus turpis, accumsan ut fermentum eget, interdum eget est. Aliquam velit turpis, aliquam id blandit pellentesque, vulputate non nisi. Vivamus lobortis nisi id ante posuere accumsan. Aliquam quis est ornare, maximus sem non, pretium urna. Aliquam hendrerit porta nisl a ultrices. Nulla euismod orci sit amet lacus facilisis, vitae facilisis nisl varius. Ut sit amet orci tempor, condimentum lectus vitae, laoreet justo. In vitae quam sed arcu pharetra vehicula id ut mauris. Donec mauris enim, eleifend sit amet leo eu, tempus finibus odio. Suspendisse facilisis eget sapien id interdum.
+     </p>
+     <p>
+       Nulla ultricies quam eget purus ullamcorper, nec volutpat leo pulvinar. Ut rhoncus volutpat tincidunt. Mauris quis lacinia nibh. Donec id turpis ultricies, posuere libero et, convallis orci. In auctor tincidunt elementum. Nulla et semper mi. Ut vel imperdiet magna. Vestibulum eu nunc vulputate, viverra sem sed, maximus lorem. Fusce non nulla sagittis, semper dolor in, feugiat tortor. Nulla sed dolor vel tortor imperdiet dignissim eget ac quam. Praesent sed sagittis quam, non laoreet libero. Vivamus et enim in lacus varius blandit euismod iaculis urna. Etiam a vulputate quam, non rutrum libero. Integer dictum, purus sed consectetur porttitor, sapien turpis accumsan urna, vel gravida magna sem eget arcu. Sed eu diam vitae risus varius gravida.
+     </p>
+     <p>
+       Nullam malesuada, justo ut pretium ullamcorper, mauris tellus aliquam ligula, eget semper libero metus in arcu. Nunc faucibus placerat nulla, vel pretium magna. Aenean eleifend, tellus in aliquam facilisis, metus tellus aliquet justo, eget iaculis dolor ipsum sit amet justo. Mauris pulvinar lacus enim, in dictum justo malesuada sit amet. Curabitur tempor quam a est tincidunt, eu tincidunt enim tempus. Aliquam fringilla sagittis molestie. Nulla dapibus, lacus in ultricies hendrerit, ante est luctus dui, quis vehicula neque diam ac ipsum. Vivamus lobortis suscipit magna id posuere. Nulla ipsum orci, iaculis sit amet ex a, ultricies vestibulum nisl. Nulla mollis et lacus ut feugiat. Praesent molestie ante augue, in cursus justo dictum in.
+     </p> -->
+
+  </div>
+
+</dialog>

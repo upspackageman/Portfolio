@@ -1,0 +1,30 @@
+<nav class="navbar fade-in navbar-expand-lg m-0">
+    <div class="container-fluid">
+      <div id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink ='/home'>Home</a>
+          <a class="nav-link" routerLink ='/projects'>Projects</a>
+          <a class="nav-link" routerLink ='/about'>About</a>
+          <a class="nav-link" routerLink ='/contact'>Contact</a>
+  
+          <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+        </div>
+        <div id="nav-icon2"  (click)="mobile_button()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="dropdown" class="slide-in-blurred-top">
+          <ul>
+            <a class="nav-link active" aria-current="page" routerLink ='/home'>Home</a>
+            <a class="nav-link" routerLink ='/projects'>Projects</a>
+            <a class="nav-link" routerLink ='/about'>About</a>
+            <a class="nav-link" routerLink ='/contact'>Contact</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

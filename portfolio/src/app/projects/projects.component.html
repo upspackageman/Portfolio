@@ -1,0 +1,206 @@
+<div id="threejs-projects-container"></div>
+<div class="project-selection" id="proj-list">
+  <div class="container">
+    <h1>Projects</h1>
+    <hr>
+    <a class="btn-project" (click)="selectedProject(1)">
+      <h5>KnowledgeCity:</h5>
+      <h6>SCORM Downloader</h6>
+    </a>
+    <a class="btn-project" (click)="selectedProject(2)">
+      <h5>Burke Real Estate:</h5>
+      <h6>Web/Desktop Application</h6>
+
+    </a>
+    <a class="btn-project" (click)="selectedProject(3)">
+      <h5>Urgent Care Bumper Repair</h5>
+      <h6>Web Application</h6>
+    </a>
+  </div>
+</div>
+
+<div id="project-one">
+  <div class="container fade-in-left">
+    <h1>SCORM Downloader</h1>
+    <hr>
+    <div class="fade-in-top project-details-mobile-text">
+      <p>
+        The JavaScript application is designed to facilitate the dynamic creation and download of SCORM (Sharable
+        Content Object Reference Model) files, leveraging the Fetch API to seamlessly communicate with Learning
+        Management Systems (LMS) APIs. SCORM files are a standardized format used for e-learning content, ensuring
+        compatibility and interoperability with various LMS platforms.
+      </p>
+
+      
+        <h5>Key Features:</h5>
+        <ul>
+          <li>The application allows users to dynamically generate SCORM-compliant packages.</li>
+          <li>SCORM specifications are followed to ensure compatibility with a wide range of LMS platforms, enabling
+            seamless integration into different e-learning environments.</li>
+          <li>The Fetch API is utilized for efficient and asynchronous communication with the LMS API.</li>
+          <li>This integration enables the application to generate SCORM packages and retrieve course information.</li>
+          <li>The application features an intuitive user interface that facilitates easy SCORM file generation and
+            interaction with the LMS.</li>
+          <li>Users can input course details, content structure, and other relevant information through a user-friendly
+            form.</li>
+          <li>The downloaded packages adhere to SCORM standards, ensuring compatibility with SCORM-compliant LMS
+            platforms.</li>
+          <li>Robust error handling mechanisms are implemented to provide meaningful feedback to users in case of issues
+            during SCORM generation or API interactions.</li>
+          <li>Real-time notifications and error messages contribute to a smooth user experience.</li>
+        </ul>
+        <code><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html#" target="_blank">View Project</a></code>
+    
+
+    </div>
+
+  </div>
+</div>
+<div id="project-two">
+  <div class="container fade-in-left">
+    <h1>Web/Desktop Application</h1>
+    <hr>
+    <div class="fade-in-top project-details-mobile-text">
+      <p>
+        Developed a scalable microservices architecture independently, enhancing system efficiency using a technology
+        stack that includes C#, .NET Core, Entity Framework, Python, WebAPI, REST, Microservices, SQL, CI/CD, Angular,
+        and Node.JS. Implemented best practices in code structure and file separation for organized web applications.
+        Designed and created functional databases, applications, and servers to support seamless website operations on
+        the backend.
+      </p>
+      <p>
+        Established CI/CD pipelines and workflows through GitLab for automation, streamlining development processes.
+        Demonstrated expertise in relational databases, with a focus on MySQL.
+      </p>
+      <p>
+        Integrated Docker for efficient deployment and management of the entire application stack.
+      </p>
+      <code><a href="http://45.32.71.33:8080/" target="_blank">View Project</a></code>
+    </div>
+
+  </div>
+</div>
+<div id="project-three">
+  <div class="container fade-in-left">
+    <h1>Web Application</h1>
+    <hr>
+    <div class="fade-in-top project-details-mobile-text">
+      <p>
+        Lead developer to a React PHP application, I played a pivotal role in driving user experience (UX) and search
+        engine optimization (SEO) initiatives, resulting in a substantial 25% increase in website traffic. Leveraging my
+        expertise in React, TypeScript, Node, and PHP, I implemented performance optimizations that led to a 20%
+        reduction in page load times.
+      </p>
+      <p>
+        Additionally, I took charge of introducing a new feature, contributing to a noteworthy 15% improvement in user
+        engagement.
+        My responsibilities extended to collaborating with management to gather requirements, define tasks, scope
+        sprints, review pull requests, and provide support to team members.
+      </p>
+      <p>
+        I prioritized UX and SEO-oriented objectives to enhance customer retention and designed user-centric
+        interactions, implementing effective front-end architecture to ensure intuitive user experiences.
+      </p>
+      <code><a href="https://upspackageman.github.io/urgentcarebumperrepair/" target="_blank">View Project</a></code>
+    </div>
+    
+  </div>
+</div>
+
+
+<div id="mobile-selection" class="project-mobile-selection">
+  <a class="btn-project-mobile" (click)="openProjectDetails(1)">
+    KnowledgeCity
+  </a>
+  <a class="btn-project-mobile" (click)="openProjectDetails(2)">
+    Burke Real Estate
+  </a>
+  <a class="btn-project-mobile" (click)="openProjectDetails(3)">
+    Urgent Care Bumper Repair
+  </a>
+</div>
+
+<dialog class="project-details-mobile" id="project-one-myDialog">
+  <a (click)="closeProjectDetails()">Close</a>
+  <h2>SCORM Downloader</h2>
+  <hr>
+  <div class="fade-in-top project-details-mobile-text" id="project-one-myDialog-scroll">
+    <p>
+      The JavaScript application is designed to facilitate the dynamic creation and download of SCORM (Sharable Content
+      Object Reference Model) files, leveraging the Fetch API to seamlessly communicate with Learning Management Systems
+      (LMS) APIs. SCORM files are a standardized format used for e-learning content, ensuring compatibility and
+      interoperability with various LMS platforms.
+    </p>
+
+      <h5>Key Features:</h5>
+      <ul>
+        <li>The application allows users to dynamically generate SCORM-compliant packages.</li>
+        <li>SCORM specifications are followed to ensure compatibility with a wide range of LMS platforms, enabling
+          seamless integration into different e-learning environments.</li>
+        <li>The Fetch API is utilized for efficient and asynchronous communication with the LMS API.</li>
+        <li>This integration enables the application to generate SCORM packages and retrieve course information.</li>
+        <li>The application features an intuitive user interface that facilitates easy SCORM file generation and
+          interaction with the LMS.</li>
+        <li>Users can input course details, content structure, and other relevant information through a user-friendly
+          form.</li>
+        <li>The downloaded packages adhere to SCORM standards, ensuring compatibility with SCORM-compliant LMS
+          platforms.</li>
+        <li>Robust error handling mechanisms are implemented to provide meaningful feedback to users in case of issues
+          during SCORM generation or API interactions.</li>
+        <li>Real-time notifications and error messages contribute to a smooth user experience.</li>
+        
+      </ul>
+      <code><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html" target="_blank">View Project</a></code>
+      
+  </div>
+</dialog>
+
+<dialog class="project-details-mobile" id="project-two-myDialog">
+  <a (click)="closeProjectDetails()">Close</a>
+  <h2>Web/Desktop Application</h2>
+  <hr>
+  <div class="fade-in-top project-details-mobile-text" id="project-two-myDialog-scroll">
+    <p>
+      Developed a scalable microservices architecture independently, enhancing system efficiency using a technology
+      stack that includes C#, .NET Core, Entity Framework, Python, WebAPI, REST, Microservices, SQL, CI/CD, Angular,
+      and Node.JS. Implemented best practices in code structure and file separation for organized web applications.
+      Designed and created functional databases, applications, and servers to support seamless website operations on
+      the backend.
+    </p>
+    <p>
+      Established CI/CD pipelines and workflows through GitLab for automation, streamlining development processes.
+      Demonstrated expertise in relational databases, with a focus on MySQL.
+    </p>
+    <p>
+      Integrated Docker for efficient deployment and management of the entire application stack.
+    </p>
+    <code><a href="http://45.32.71.33:8080/" target="_blank">View Project</a></code>
+  </div>
+
+</dialog>
+
+<dialog class="project-details-mobile" id="project-three-myDialog">
+  <a (click)="closeProjectDetails()">Close</a>
+  <h2>Web Application</h2>
+  <hr>
+  <div class="fade-in-top project-details-mobile-text" id="project-three-myDialog-scroll">
+    <p>
+      Lead developer to a React PHP application, I played a pivotal role in driving user experience (UX) and search
+      engine optimization (SEO) initiatives, resulting in a substantial 25% increase in website traffic. Leveraging my
+      expertise in React, TypeScript, Node, and PHP, I implemented performance optimizations that led to a 20%
+      reduction in page load times.
+    </p>
+    <p>
+      Additionally, I took charge of introducing a new feature, contributing to a noteworthy 15% improvement in user
+      engagement.
+      My responsibilities extended to collaborating with management to gather requirements, define tasks, scope
+      sprints, review pull requests, and provide support to team members.
+    </p>
+    <p>
+      I prioritized UX and SEO-oriented objectives to enhance customer retention and designed user-centric
+      interactions, implementing effective front-end architecture to ensure intuitive user experiences.
+
+    </p>
+    <code><a href="https://upspackageman.github.io/urgentcarebumperrepair/" target="_blank">View Project</a></code>
+  </div>
+</dialog>
