@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
     this.removeAboutLink();
     this.removeAboutLinkMobile();
     this.initScene();
-   // this. redirect();
+    this. redirect();
     this.initHideDetails();
   }
 
@@ -46,16 +46,18 @@ export class AboutComponent implements OnInit {
     }
   }
 
+
   @HostListener('window:resize', ['$event'])
   async update_camera(){
     this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.001, 0);
     this.camera.position.z = 0;
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+   
   }
 
   @HostListener('window:resize', ['$event'])
   initScene(){
-      this.camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, .001, 0);
+      this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, .001, 0);
       this.camera.position.z = 0;
       this.camera.position.x= 1.16;
       this.camera.rotation.y = -0.12;
@@ -283,6 +285,8 @@ export class AboutComponent implements OnInit {
   }
 
   removeAboutLink(){
+  //  const fick = document.getElementById("threejs-about-container") as HTMLBaseElement;
+ //   fick.style.display='none';
     const link = document.querySelector('app-navbar .navbar .navbar-nav ') as HTMLElement;
     const about_link = link.children[2]  as HTMLElement;
     const proj_link =  link.children[1]  as HTMLElement;
@@ -574,6 +578,9 @@ export class AboutComponent implements OnInit {
     }
 
   }
+
+
+  
   @HostListener('window:resize', ['$event'])
   testDetails(num:number = 0){
 
@@ -771,7 +778,6 @@ export class AboutComponent implements OnInit {
     const test_cross_mobile = document.getElementById('test_cross_mobile') as HTMLElement;
 
 
-    console.log(test_cypress_mobile);
 
     prog_c_mobile.style.display = 'none';
     prog_php_mobile.style.display = 'none';

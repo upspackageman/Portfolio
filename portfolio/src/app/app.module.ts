@@ -9,6 +9,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './contact/contact.component';
+import { MessageComponent } from './message/message.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,16 @@ import { ContactComponent } from './contact/contact.component';
     ProjectsComponent,
     NavbarComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    EditorModule,
+    NoopAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

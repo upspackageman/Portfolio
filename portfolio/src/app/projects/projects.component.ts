@@ -25,23 +25,23 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   async ngOnInit(): Promise<void> {
     this.removeProjectLinkMobile();
     this.removeProjectLink();
-    this.initScene();
-    this.animate();
+    this.project_initScene();
+    this.project_animate();
     this.redirect();
     this.selectedProject();
-    this.isMobile();
+    this.project_isMobile();
   }
 
   @HostListener('window:resize', ['$event'])
-  async update_camera(){
+  async project_update_camera(){
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 2000);
     this.camera.position.z = 0;
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  async initScene(): Promise<void> {
+  async project_initScene(): Promise<void> {
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 2000);
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     const container = document.getElementById('threejs-projects-container');
@@ -100,9 +100,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     }
   }
 
-  async animate(): Promise<void> {
+  async project_animate(): Promise<void> {
     this.frameId = requestAnimationFrame(() => {
-      this.animate();
+      this.project_animate();
     });
 
     if (this.cube) {
@@ -117,7 +117,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 
   @HostListener('window:resize', ['$event'])
-  isMobile(){
+  project_isMobile(){
     const proj1 = document.getElementById('project-one') as HTMLElement;
     const proj2 = document.getElementById('project-two') as HTMLElement;;
     const proj3 = document.getElementById('project-three') as HTMLElement;;

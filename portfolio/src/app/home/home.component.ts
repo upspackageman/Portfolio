@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit(): Promise<void> {
-    this.initScene();
-    this.animate();
+    this.home_initScene();
+    this.home_animate();
     this.removeHomeLink();
     this.removeHomeLinkMobile();
     this.redirect();
@@ -70,13 +70,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   @HostListener('window:resize', ['$event'])
-  async update_camera(){
+  async home_update_camera(){
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
     this.camera.position.z = 0;
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  async initScene(): Promise<void> {
+  async home_initScene(): Promise<void> {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
     this.renderer = new THREE.WebGLRenderer();
@@ -122,9 +122,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  async animate(): Promise<void> {
+  async home_animate(): Promise<void> {
     this.frameId = requestAnimationFrame(() => {
-      this.animate();
+      this.home_animate();
     });
 
     // if (this.cube) {

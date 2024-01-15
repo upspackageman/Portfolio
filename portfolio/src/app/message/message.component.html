@@ -1,0 +1,39 @@
+<!-- <div class="main-class"></div> -->
+
+<form [formGroup]="contactForm" id="contactForm">
+    <div id="nameSection">
+        <label for="text">Name:</label><br>
+        <input formControlName="name" type="name" id="name" name="name">
+        <div *ngIf="f['name'].touched && f['name']errors">
+            <div class=" valid" *ngIf="f['name'].errors">First Name is required</div>
+        </div>
+    </div>
+    <div id="emailSection">
+        <label for="email">Email:</label><br>
+        <input formControlName="email" type="email" id="_email" name="email" required="">
+        <div *ngIf="f['email'].touched && f['email'].errors">
+            <div class="valid" *ngIf="f['email'].errors['required']">Email is required</div>
+            <div class="valid" *ngIf="f['email'].errors">Email must be a valid email address</div>
+        </div>
+    </div>
+    
+
+
+
+
+    <editor apiKey="8l3kxzlyo8ui8nf527vbw5x5wkjcjjd9de83g6r59jb6hsu2" class="editor-container"
+        [init]="{ plugins: 'lists help wordcount' }" #tinymce></editor>
+    <button [hidden]="!!contactForm.valid" [disabled]="!contactForm.valid" id="send">
+        <span> Please Fill Form</span>
+
+    </button>
+    <button [hidden]="!contactForm.valid" id="send" (click)="test()">Submit</button>
+</form>
+<div id="loading" class="spinner-border text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div id="sent">
+    <h1>SENT!!!!!!!!!</h1> <button (click)="resend()" id="sendAgain" class="contact-btn "> <i
+            class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+</div>

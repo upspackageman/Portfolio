@@ -18,9 +18,11 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@tinymce/tinymce-angular": "^7.0.0",
     "rxjs": "~7.8.0",
     "three": "^0.156.1",
     "three-orbitcontrols-ts": "^0.1.2",
+    "tinymce": "^6.8.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

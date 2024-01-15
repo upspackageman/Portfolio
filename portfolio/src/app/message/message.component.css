@@ -1,0 +1,252 @@
+.editor-container {
+    background-color:rgba(255,255,255,0);
+    width:100%;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin-top: 10px;
+
+    
+  }
+
+  #emailSection{
+    color:#fff;
+    position: relative;
+    width:100%
+  }
+
+  #emailSection input{
+    color:#fff;
+    border-radius: .2rem !important;
+    border-width: 1px;
+    border-color:#fff;
+    border-style: groove !important;
+    background:rgba(223, 226, 230, 0) !important;
+    min-width:70%
+  }
+
+  #emailSection input:focus-visible {
+    outline-color: #c9c9c9;
+    outline-style: groove;
+    outline-width:  .05em;
+    
+  }
+
+  .valid{
+    font-size: .75rem;
+  }
+
+  #sent{
+    font-size: 24px;
+    color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+  }
+
+  #loading{
+    width:200px;
+    height: 200px;
+    color:#fff;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    justify-content: center;
+  }
+
+
+  
+
+ 
+ 
+ 
+
+
+
+  #nameSection{
+    color:#fff;
+    position: relative;
+    width:100%
+  }
+
+  #nameSection input{
+    border-radius: .2rem !important;
+    border-width: 1px;
+    border-color:#fff;
+    color:#fff;
+    background-color:rgba(223, 226, 230, 0) !important;
+    min-width:70%
+  }
+
+  #nameSection input:focus-visible {
+    outline-color: #c9c9c9;
+    outline-style: groove;
+    outline-width:  .05em;
+  }
+  
+
+  #contactForm{
+    padding:10px;
+    position: absolute;
+    border: 1px none;
+    width: 90%;
+    left: 5%;
+    height: auto;
+    margin-top: 4%;
+  }
+
+  #send{
+    background-color: rgba(255,255,255,0);
+    border-style: groove;
+    border-color:#fff;
+    color:#fff;
+    position: relative;
+    border-radius: .2rem;
+    top:100px;
+    width: 200px;
+    height:70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  #sendAgain{
+    background-color: rgba(255,255,255,0);
+    border-style: groove;
+    border-color:#fff;
+    color:#fff;
+    position: relative;
+    border-radius: .2rem;
+    top:100px;
+    width: 200px;
+    height:70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .main-class{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-image: linear-gradient(rgba(43, 43, 43, 0.7), rgba(174, 191, 250, 0.7)), url(https://images.unsplash.com/photo-1682685796444-acc2f5c1b7b6?q=80&w=4070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  }
+ 
+   ::ng-deep .tox .tox-menubar {
+    background-color: rgba(255,255,255,0) !important;
+  }
+
+
+  ::ng-deep .tox .tox-menubar span{
+    color:#fff;
+  }
+
+  ::ng-deep .tox-tinymce {
+    border: 1px groove #eee !important;
+    border-radius: .4rem !important;
+  }
+
+
+  
+
+
+ 
+
+
+  
+
+  ::ng-deep .tox:not(.tox-tinymce-inline) .tox-editor-header {
+    background-color: rgba(255,255,255,0) !important;
+  } 
+
+  ::ng-deep .tox:not(.tox-tinymce-inline) .tox-editor-header span{
+    color:#fff;
+  }
+
+  ::ng-deep .tox:not(.tox-tinymce-inline) .tox-editor-header span :hover{
+    color:#fff;
+  }
+
+  ::ng-deep .tox .tox-toolbar-overlord {
+    background-color: rgba(255,255,255,0) !important;
+  }
+
+  ::ng-deep .tox .tox-toolbar__primary {
+    background-color: rgba(255,255,255,0) !important;
+  }
+
+  ::ng-deep .tox .tox-toolbar-overlord span svg{
+    fill:#fff !important;
+  }
+
+  ::ng-deep .tox .tox-tbtn--bespoke {
+    background: rgba(255,255,255,0) !important;
+}
+
+::ng-deep .tox-bottom-anchorbar{
+    display: none !important;;
+}
+
+::ng-deep .tox .tox-statusbar {
+    display: none !important;
+}
+
+::ng-deep .tox .tox-edit-area__iframe{
+    background: rgba(255,255,255, 0.4) !important;
+}
+
+::ng-deep .tox .tox-mbtn:focus:not(:disabled) {
+    background:rgba(223, 226, 230, 0.406) !important;
+}
+
+::ng-deep .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active) {
+    background:rgba(223, 226, 230, 0.406) !important;
+}
+
+::ng-deep .tox .tox-tbtn--enabled, .tox .tox-tbtn--enabled:hover {
+    background:rgba(223, 226, 230, 0.406) !important;
+}
+
+
+::ng-deep .tox .tox-tbtn:hover {
+    background:rgba(223, 226, 230, 0.406) !important;
+}
+
+::ng-deep .tox .tox-tinymce{
+    color: #333;
+}
+
+::ng-deep .tox .tox-tbtn--bespoke .tox-tbtn__select-label  {
+  display: none !important;
+}
+
+
+::ng-deep .tox .tox-tbtn__select-chevron{
+  display: none !important;
+}
+
+
+::ng-deep .tox .tox-tbtn--bespoke{
+  display: none !important;
+
+}
+
+::ng-deep .tox .tox-menubar {
+  display: none !important;
+}
+
+
+@media (max-width: 1280px) and (max-height:800px){
+  ::ng-deep .tox-tinymce {
+    height: 200px !important;
+  }
+
+  #contactForm{
+    top:-10px;
+  }
+
+  #send{
+    top: 40px;
+  }
+}

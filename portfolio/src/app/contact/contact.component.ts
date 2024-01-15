@@ -33,14 +33,14 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   async update_camera(){
-    this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.01, 1000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 2000);
     this.camera.position.z = 0;
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   async initScene(): Promise<void> {
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.01, 1000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     const container = document.getElementById('threejs-contact-container');
@@ -112,6 +112,25 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (this.renderer && this.scene && this.camera) {
      this.renderer.render(this.scene, this.camera);
     }
+  }
+
+  contact(){
+    const link = document.querySelector('app-navbar .navbar') as HTMLElement;
+    const nav = document.querySelector('#formContainer') as HTMLElement;
+    link.style.display='none';
+    nav.style.display='none';
+    const send = document.getElementById('contact') as HTMLDialogElement;
+    console.log(send);
+    send.showModal();
+  }
+
+  closeAboutDetails(){
+    const close = document.getElementById('contact') as HTMLDialogElement;
+    const link = document.querySelector('app-navbar .navbar') as HTMLElement;
+    const nav = document.querySelector('#formContainer') as HTMLElement;
+    link.style.display='block';
+    nav.style.display='block';
+    close.close();
   }
 
 

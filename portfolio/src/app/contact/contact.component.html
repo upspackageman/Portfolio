@@ -11,22 +11,22 @@
   </div>
 
 </form> -->
-<div id="contact-main">
-  <div class="form-container puff-in-center">
+
+  <div id="formContainer" class="form-container puff-in-center">
 
     <h3>
       If you have any questions about my services, or just want to say hello, feel free to contact me. Below are my social pages and my email:
     </h3>
     <div class= "contact-container">
       <a id="indeed" href=" https://www.linkedin.com/in/william-ward-53376a100" target="_blank" class="fa fa-linkedin-square"></a>
-      <a id="email"  href="mailto:wward246@gmail.com" target="_blank" class="contact-btn "> <i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+      <a id="email" (click)="contact()"  class="contact-btn "> <i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
     </div>
 
-
-
-
   </div>
-</div>
 
 
+<dialog id="contact" class="slide-in-blurred-top">
+  <a (click)="closeAboutDetails()">Close</a>
+  <app-message></app-message>
+</dialog>
 

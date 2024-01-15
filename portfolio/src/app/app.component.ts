@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -27,11 +27,12 @@ export class AppComponent implements OnInit{
   }
 
   async reload_landing(){
-    console.log(10);
     setTimeout(() => {
       localStorage.removeItem('landing');
     }, 10000)
   }
+
+  
 
 
 
