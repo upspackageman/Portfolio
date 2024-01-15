@@ -10,13 +10,20 @@ services:
     ports:
       - "8080:80"
     container_name:  portfolio-app
+    networks:
+      - mynetwork
+    
 
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
       - ./message.py:/app/message.py
+    container_name:  portfolio-api
+    networks:
+      - mynetwork
     ports:
       - "8000:80"
-   
-   
+      
+networks:
+  mynetwork:
       
