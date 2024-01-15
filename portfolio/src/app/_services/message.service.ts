@@ -20,7 +20,7 @@ export class MessageService {
     if (mailMessage) {
       headers = headers.set('Content-Type', 'application/json');
     }
-
+    console.log(this.baseUrl + 'send-email/');
 
     return this.http.post(this.baseUrl + 'send-email/', mailMessage, {headers}) .pipe(
       catchError(this.handleError)
