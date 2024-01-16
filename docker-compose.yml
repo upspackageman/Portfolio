@@ -10,20 +10,14 @@ services:
     ports:
       - "8080:80"
     container_name:  portfolio-app
-    networks:
-      - mynetwork
-    
-
+  
   fastapi-app:
-    build:
-      context: ./
-      dockerfile: dockerfile-p
-    container_name:  portfolio-api
-    networks:
-     - mynetwork
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
+    volumes:
+      - ./message.py:/app/message.py
+      - ./requirements.txt:/app/requirements.txt  # Add this line to mount requirements.txt
     ports:
-      - "8000:8000"
-      
-networks:
-  mynetwork:
+      - "8000:80"
+   
+   
       
