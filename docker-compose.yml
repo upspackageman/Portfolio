@@ -18,9 +18,9 @@ services:
     build:
       context: ./
       dockerfile: dockerfile-p
-      container_name:  portfolio-api
-      networks:
-       - mynetwork
+    container_name:  portfolio-api
+    networks:
+     - mynetwork
     ports:
       - "8000:8000"
       
