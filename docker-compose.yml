@@ -15,14 +15,14 @@ services:
     
 
   fastapi-app:
-    image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
-    volumes:
-      - ./message.py:/app/message.py
-    container_name:  portfolio-api
-    networks:
-      - mynetwork
+    build:
+      context: ./
+      dockerfile: dockerfile-p
+      container_name:  portfolio-api
+      networks:
+       - mynetwork
     ports:
-      - "8000:80"
+      - "8000:8000"
       
 networks:
   mynetwork:
