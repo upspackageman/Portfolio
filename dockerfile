@@ -7,9 +7,6 @@ WORKDIR /app
 COPY ./portfolio/package.json .
 COPY ./portfolio/package-lock.json .
 
-#SSL
-COPY /etc/letsencrypt/live/williamjwardiii.com/ /etc/ssl/certs/
-
 # Install npm dependencies
 RUN npm install --force
 
