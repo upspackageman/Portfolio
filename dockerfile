@@ -7,6 +7,9 @@ WORKDIR /app
 COPY ./portfolio/package.json .
 COPY ./portfolio/package-lock.json .
 
+#SSL
+COPY /etc/letsencrypt/live/williamjwardiii.com/ /etc/ssl/certs/
+
 # Install npm dependencies
 RUN npm install --force
 
@@ -29,8 +32,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the built Angular app from the builder stage
 COPY --from=builder /app/dist/portfolio /usr/share/nginx/html
-
-# Add the volume for SSL certificates
-VOLUME ["/etc/letsencrypt/live/williamjwardiii.com/", "/etc/ssl/certs"]
 
 EXPOSE 80
