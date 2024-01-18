@@ -3,8 +3,6 @@ version: '3.8'
 services:
   
   angular-app:
-    volumes:
-      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/ssl/certs
     build:
       context: ./
       dockerfile: dockerfile

@@ -26,4 +26,7 @@ FROM nginx:latest
 # Copy the built Angular app from the builder stage
 COPY --from=builder /app/dist/portfolio /usr/share/nginx/html
 
+# Add the volume for SSL certificates
+VOLUME ["/etc/letsencrypt/live/williamjwardiii.com/", "/etc/ssl/certs"]
+
 EXPOSE 80
