@@ -160,6 +160,12 @@
     flex-direction: column;
     padding:8% 3% 3% 3%;
   }
+
+  code{
+    position: relative;
+    left:70%;
+   
+  }
   
   .project-selection .btn-project{
       margin-bottom: 10%;

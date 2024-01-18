@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import smtplib
+import uvicorn
 
 app = FastAPI()
 
@@ -12,11 +13,27 @@ class EmailPayload(BaseModel):
     name: str
     message: str
     email: str
+    
+
+
+# Specify the paths to the SSL certificate and private key files
+ssl_keyfile = "/etc/ssl/certs/privkey.pem"
+ssl_certfile = "/etc/ssl/certs/fullchain.pem"
+
+uvicorn.run(
+    "main:app",
+    host="0.0.0.0",
+    port=8000,
+    ssl_keyfile=ssl_keyfile,
+    ssl_certfile=ssl_certfile,
+    reload=True,
+)
+
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://207.246.108.92","http://207.246.108.92","https://207.246.108.92","*"],  # You may want to restrict this to specific origins in production
+    allow_origins=["http://williamjwardiii.com","http://149.28.68.74","https://williamjwardiii.com","https://149.28.68.74"],  # You may want to restrict this to specific origins in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -64,3 +81,6 @@ async def send_email(payload: EmailPayload):
         return JSONResponse(content={"message": "Email sent successfully"}, status_code=200)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to send email: {str(e)}")
+    
+    
+    
