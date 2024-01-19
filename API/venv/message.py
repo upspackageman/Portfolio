@@ -17,17 +17,17 @@ class EmailPayload(BaseModel):
 
 
 # Specify the paths to the SSL certificate and private key files
-# ssl_keyfile = "/etc/ssl/certs/privkey.pem"
-# ssl_certfile = "/etc/ssl/certs/fullchain.pem"
+ssl_keyfile = "/etc/ssl/certs/privkey.pem"
+ssl_certfile = "/etc/ssl/certs/fullchain.pem"
 
-# uvicorn.run(
-#     "main:app",
-#     host="0.0.0.0",
-#     port=8000,
-#     ssl_keyfile=ssl_keyfile,
-#     ssl_certfile=ssl_certfile,
-#     reload=True,
-# )
+uvicorn.run(
+    "main:app",
+    host="0.0.0.0",
+    port=8000,
+    ssl_keyfile=ssl_keyfile,
+    ssl_certfile=ssl_certfile,
+    reload=True,
+)
 
 
 # Add CORS middleware
