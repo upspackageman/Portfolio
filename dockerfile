@@ -23,10 +23,6 @@ RUN ng build --configuration=production
 # Stage 2: Serve the Angular app using Nginx
 FROM nginx:latest
 
-# Remove the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
-
-
 # Copy the built Angular app from the builder stage
 COPY --from=builder /app/dist/portfolio /usr/share/nginx/html
 
