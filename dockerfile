@@ -1,7 +1,7 @@
 # Stage 1: Build the Angular app
 FROM node:latest as builder
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copy only the package.json and package-lock.json files to install dependencies
 COPY ./portfolio/package.json .
