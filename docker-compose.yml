@@ -3,29 +3,30 @@ version: '3.8'
 services:
   
   angular-app:
-    volumes:
-      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/ssl/certs
     build:
       context: ./
+      args:
+        - HTTP_PROXY=https://williamjwardiii.com:8080
       dockerfile: dockerfile
+    environment:
+      - HTTP_PROXY=https://williamjwardiii.com:8080
     restart: always
     ports:
       - "8080:80"
     container_name:  portfolio-app
   
   fastapi-app:
+    build:
+      context: .
+      args:
+        - HTTP_PROXY=https://williamjwardiii.com:8000
+    environment:
+      - HTTP_PROXY=https://williamjwardiii.com:8000
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt  # Add this line to mount requirements.txt
-      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/ssl/certs
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ports:
       - "8000:80"
     container_name:  portfolio-api
-
-
-
-   
-   
-      
