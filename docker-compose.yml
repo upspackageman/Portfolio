@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  apache-server:
-    image: httpd:latest
-    ports:
-      - "8080:80"
-    # Other Apache configurations, if needed
-    networks:
-    - mynetwork
+  # apache-server:
+  #   image: httpd:latest
+  #   ports:
+  #     - "8080:80"
+  #   # Other Apache configurations, if needed
+  #   networks:
+  #   - mynetwork
 
   angular-app:
     build:
