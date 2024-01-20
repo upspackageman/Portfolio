@@ -5,7 +5,6 @@ from email.mime.text import MIMEText
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import smtplib
-import uvicorn
 
 app = FastAPI()
 
