@@ -6,6 +6,8 @@ services:
     ports:
       - "8080:80"
     # Other Apache configurations, if needed
+    networks:
+    - mynetwork
 
   angular-app:
     build:
@@ -15,6 +17,8 @@ services:
     ports:
       - "8081:80"
     container_name: portfolio-app
+    networks:
+    - mynetwork
 
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
@@ -26,6 +30,8 @@ services:
     ports:
       - "8000:80"
     container_name: portfolio-api
+    networks:
+    - mynetwork
 
   # nginx-server:
   #   image: nginx:latest
@@ -38,3 +44,5 @@ services:
   #     - angular-app
   #     - fastapi-app
   # container_name: portfolio-nginx
+networks:
+  mynetwork:
