@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  apache-server:
-    image: httpd:latest
-    ports:
-      - "8080:80"
-    # Other Apache configurations, if needed
-    networks:
-    - mynetwork
+  # apache-server:
+  #   image: httpd:latest
+  #   ports:
+  #     - "8080:80"
+  #   # Other Apache configurations, if needed
+  #   networks:
+  #   - mynetwork
 
   angular-app:
     build:
@@ -16,7 +16,9 @@ services:
     restart: always
     ports:
       - "8081:80"
+      - "8081:443"
     container_name: portfolio-app
+   
 
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
@@ -27,10 +29,9 @@ services:
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8000:80"
+      - "8000:443"
     container_name: portfolio-api
-    networks:
-    - mynetwork
-
+    
   # nginx-server:
   #   image: nginx:latest
   #   volumes:
@@ -42,5 +43,3 @@ services:
   #     - angular-app
   #     - fastapi-app
   # container_name: portfolio-nginx
-networks:
-  mynetwork:
