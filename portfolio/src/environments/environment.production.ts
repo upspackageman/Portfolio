@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl:'williamjwardiii.com:8000'//'http://207.246.108.92:8000/', //http://192.168.0.28:5001/api/
+    apiUrl:'http://149.28.68.74:8000/'//'http://207.246.108.92:8000/', //http://192.168.0.28:5001/api/
   };
   
   /*
