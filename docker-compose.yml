@@ -9,7 +9,6 @@ services:
     restart: always
     ports:
       - "8080:80"
-      - "8442:443"
     container_name: portfolio-app
 
   fastapi-app:
@@ -21,7 +20,6 @@ services:
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8000:8000"
-      - "8443:443"
     container_name: portfolio-api
 
   nginx-proxy:
