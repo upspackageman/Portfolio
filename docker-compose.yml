@@ -32,3 +32,4 @@ services:
     depends_on:
       - angular-app
       - fastapi-app
+    container_name: portfolio-proxy
