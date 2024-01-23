@@ -10,7 +10,7 @@ services:
     restart: always
     volumes:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-      - ./configurations/Client/nginx.conf:/etc/nginx/nginx.conf
+      - ./configurations/Client/nginx.conf:/etc/nginx/sites-available/docker-proxy
     
     ports:
       - "8080:80"
@@ -23,7 +23,7 @@ services:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-      - ./configurations/API/nginx.conf:/etc/nginx/nginx.conf
+      - ./configurations/API/nginx.conf:/etc/nginx/sites-available/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
       

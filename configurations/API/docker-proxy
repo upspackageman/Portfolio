@@ -1,18 +1,4 @@
-worker_processes 1;
 
-events {
-    worker_connections 1024;
-}
-
-http {
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
 
     server {
         listen 80;
@@ -41,6 +27,5 @@ http {
     #     }
     # }
 
-    include /etc/nginx/conf.d/*.conf;
-    include /etc/nginx/sites-enabled/*;
-}
+ 
+ 
