@@ -4,7 +4,7 @@
         listen 80;
         server_name 107.191.58.37;
 
-        location /angular-app/ {
+        location / {
             proxy_pass http://portfolio-app:8080/;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -20,8 +20,8 @@
     #     ssl_certificate_key /etc/cert/ssl/privkey.pem;
     #     ssl_trusted_certificate /etc/cert/ssl/chain.pem;
 
-    #     location /angular-app/ {
-    #         proxy_pass http://portfolio-app:80/;
+    #     location / {
+    #         proxy_pass http://portfolio-app:8080/;
     #         proxy_set_header Host $host;
     #         proxy_set_header X-Real-IP $remote_addr;
     #         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

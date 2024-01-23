@@ -10,7 +10,7 @@ services:
     restart: always
     volumes:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-      - ./configurations/Client/nginx.conf:/etc/nginx/sites-available/docker-proxy
+      - ./configurations/Client/docker-proxy:/etc/nginx/sites-available/docker-proxy
     
     ports:
       - "8080:80"
