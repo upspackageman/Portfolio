@@ -32,7 +32,7 @@ class EmailPayload(BaseModel):
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://williamjwardiii.com","http://149.28.68.74","https://williamjwardiii.com","https://149.28.68.74"],  # You may want to restrict this to specific origins in production
+    allow_origins=["http://williamjwardiii.com","https://107.191.58.37","http://107.191.58.37","http://149.28.68.74","https://williamjwardiii.com","https://149.28.68.74"],  # You may want to restrict this to specific origins in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
