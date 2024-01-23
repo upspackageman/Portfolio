@@ -49,4 +49,4 @@ services:
   #   container_name: portfolio-proxy
 
 networks:
-  mynetwork:
+  my_network:
