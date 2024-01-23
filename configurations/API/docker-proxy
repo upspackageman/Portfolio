@@ -3,7 +3,7 @@
     server {
         listen 80;
         server_name 107.191.58.37;
-        location /fastapi-app/ {
+        location / {
             proxy_pass http://portfolio-api:8000/;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -19,7 +19,7 @@
     #     ssl_certificate_key /etc/cert/ssl/privkey.pem;
     #     ssl_trusted_certificate /etc/cert/ssl/chain.pem;
 
-    #     location /fastapi-app/ {
+    #     location / {
     #         proxy_pass http://portfolio-api:8000/;
     #         proxy_set_header Host $host;
     #         proxy_set_header X-Real-IP $remote_addr;
