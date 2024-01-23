@@ -23,7 +23,7 @@ services:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-      - ./configurations/API/nginx.conf:/etc/nginx/sites-available/docker-proxy
+      - ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
       
