@@ -13,7 +13,7 @@ services:
     
     ports:
       - "8080:80"
-      - "8080:443"
+      - "8081:443"
     container_name: portfolio-app
     networks:
       - my_network
@@ -30,7 +30,7 @@ services:
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8000:80"
-      - "8000:443"
+      - "8001:443"
     container_name: portfolio-api
     networks:
       - my_network
