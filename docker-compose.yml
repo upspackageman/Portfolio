@@ -9,25 +9,22 @@ services:
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt/:/etc/letsencrypt/
+      - /etc/letsencrypt:/etc/letsencrypt  # Mount Let's Encrypt certificates
     container_name: portfolio-server
     networks:
       - my_network
     depends_on:
       - angular-app
       - fastapi-app
- 
-   
+      - certbot  # Make sure Certbot runs before the webserver
+
   angular-app:    
     build:
       context: ./
       dockerfile: dockerfile
     restart: always
-    
-    
     ports:
       - "8080:8080"
-      
     container_name: portfolio-app
     networks:
       - my_network
@@ -35,21 +32,30 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
-      #- ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
-      
-      
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8000:8000"
-      
     container_name: portfolio-api
+    networks:
+      - my_network
+
+  certbot:
+    image: certbot/certbot
+    command: >
+      sh -c "dockerize -wait tcp://webserver:80 -timeout 60s certbot certonly --webroot --webroot-path=/var/www/html --email your-wward246@gmail.com -d williamjwardiii.com"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    container_name: certbot
+    depends_on:
+      - webserver  # Make sure webserver is running before Certbot
     networks:
       - my_network
 
 networks:
   my_network:
+
 
 
 # version: '3.8'
