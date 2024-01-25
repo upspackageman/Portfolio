@@ -30,7 +30,8 @@ services:
     networks:
       - my_network
     
-
+networks:
+  my_network
   # nginx-proxy:
   #   image: nginx:latest
   #   ports:
