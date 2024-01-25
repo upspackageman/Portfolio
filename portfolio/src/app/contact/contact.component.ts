@@ -129,7 +129,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     const link = document.querySelector('app-navbar .navbar') as HTMLElement;
     const nav = document.querySelector('#formContainer') as HTMLElement;
     link.style.display='block';
-    nav.style.display='block';
+    nav.style.display='grid';
     close.close();
   }
 
