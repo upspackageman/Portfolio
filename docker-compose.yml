@@ -11,7 +11,7 @@ services:
       - ./configurations/Client/docker-proxy:/etc/nginx/sites-available/docker-proxy
     ports:
       - "8080:80"
-      - "443:443"
+      - "8081:443"
     container_name: portfolio-app
     networks:
       - my_network
@@ -26,6 +26,7 @@ services:
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
       - "8000:8080"
+      - "8001:8081"
     container_name: portfolio-api
     networks:
       - my_network
