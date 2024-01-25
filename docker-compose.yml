@@ -30,6 +30,7 @@ services:
     image: certbot/certbot
     volumes:
       - /etc/letsencrypt
+      - /var/www/html  
     command: certonly --webroot --webroot-path=/var/www/html --domains williamjwardiii.com -d
     container_name: certbot
     depends_on:
