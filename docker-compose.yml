@@ -3,8 +3,7 @@ version: '3'
 services:
   certbot:
     image: certbot/certbot
-    command: >
-      sh -c "dockerize -wait tcp://webserver:80 -timeout 60s certbot certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
+    command: certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
     container_name: certbot
