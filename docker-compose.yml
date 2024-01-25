@@ -13,7 +13,9 @@ services:
     container_name: portfolio-server
     networks:
       - my_network
-      
+    depends_on:
+      - angular-app
+      - fastapi-app
  
    
   angular-app:    
