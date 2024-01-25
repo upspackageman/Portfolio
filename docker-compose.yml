@@ -2,6 +2,7 @@ version: '3'
 
 services:
   certbot:
+    restart: always
     image: certbot/certbot
     command: certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
     volumes:
