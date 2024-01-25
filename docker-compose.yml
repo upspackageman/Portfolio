@@ -31,7 +31,7 @@ services:
     volumes:
       - /etc/letsencrypt
       - /var/www/html  
-    command: certonly --webroot --webroot-path=/var/www/html -d williamjwardiii.com
+     command: certonly --webroot --webroot-path=/var/www/html -d williamjwardiii.com --agree-tos --email wward246@gmail.com
     container_name: certbot
     depends_on:
       - angular-app
