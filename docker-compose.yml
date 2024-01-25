@@ -1,39 +1,15 @@
-version: '3'
+version: '3.8'
 
 services:
-  certbot:
-    restart: always
-    image: certbot/certbot
-    command: certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-    container_name: certbot
 
-     
-    networks:
-      - my_network
-  webserver:
-    image: nginx:latest
-    ports:
-      - 80:80
-      - 443:443
-    restart: always
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt:/etc/letsencrypt  # Mount Let's Encrypt certificates
-    container_name: portfolio-server
-    networks:
-      - my_network
-    depends_on:
-      - certbot  # Make sure Certbot runs before the webserver
-
-  angular-app:    
+  angular-app:
     build:
       context: ./
       dockerfile: dockerfile
     restart: always
     ports:
-      - "8080:8080"
+      - "80:80"
+      - "443:443"
     container_name: portfolio-app
     networks:
       - my_network
@@ -50,11 +26,20 @@ services:
     networks:
       - my_network
 
-
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - /etc/letsencrypt
+    command: certonly --webroot --webroot-path=/var/www/html -d will'.com -d
+    container_name: certbot
+    depends_on:
+      - angular-app
+      - fastapi-app
+    networks:
+      - my_network
 
 networks:
   my_network:
-
 
 
 # version: '3.8'
@@ -62,18 +47,13 @@ networks:
 # services:
 
 #   angular-app:
-    
 #     build:
 #       context: ./
 #       dockerfile: dockerfile
 #     restart: always
-#     volumes:
-#       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-#       - ./configurations/Client/docker-proxy:/etc/nginx/sites-available/docker-proxy
-    
 #     ports:
-#       - "8080:80"
-#       - "8081:443"
+#       - "80:80"
+#       - "443:443"
 #     container_name: portfolio-app
 #     networks:
 #       - my_network
@@ -81,32 +61,26 @@ networks:
 #   fastapi-app:
 #     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
 #     volumes:
-#       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-#       - ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
 #       - ./API/venv/message.py:/app/message.py
 #       - ./requirements.txt:/app/requirements.txt
-      
-      
+     
 #     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
 #     ports:
 #       - "8000:8000"
-#       - "8001:443"
 #     container_name: portfolio-api
 #     networks:
 #       - my_network
 
-#   # nginx-proxy:
-#   #   image: nginx:latest
-#   #   ports:
-#   #     - "81:80"
-#   #     - "433:443"
-#   #   volumes:
-#   #     - ./nginx.conf:/etc/nginx/nginx.conf
-#   #      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/letsencrypt/live/williamjwardiii.com/
-#   #   depends_on:
-#   #     - angular-app
-#   #     - fastapi-app
-#   #   container_name: portfolio-proxy
+  # nginx-proxy:
+  #   image: nginx:latest
+  #   ports:
+  #     - "81:80"
+  #     - "433:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/letsencrypt/live/williamjwardiii.com/
+  #   depends_on:
+  #     - angular-app
+  #     - fastapi-app
+  #   container_name: portfolio-proxy
 
-# networks:
-#   my_network:
