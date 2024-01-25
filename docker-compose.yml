@@ -12,7 +12,7 @@ services:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
     networks:
       - my_network
-      
+    container_name: portfolio-server
   
   angular-app:    
     build:
