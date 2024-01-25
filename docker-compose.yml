@@ -7,8 +7,10 @@ services:
       context: ./
       dockerfile: dockerfile
     restart: always
+    volumes:
+      - ./configurations/API/docker-proxy
     ports:
-      - "80:80"
+      - "8080:80"
       - "443:443"
     container_name: portfolio-app
     networks:
@@ -17,60 +19,17 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
+      - ./configurations/API/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
+     
     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
     ports:
-      - "8000:8000"
+      - "8000:8080"
     container_name: portfolio-api
     networks:
       - my_network
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - /etc/letsencrypt
-      - /var/www/html  
-    command: certonly --standalone --preferred-challenges http -d williamjwardiii.com --agree-tos --email wward246@gmail.com
-    container_name: certbot
-    depends_on:
-      - angular-app
-      - fastapi-app
-    networks:
-      - my_network
-
-networks:
-  my_network:
-
-
-# version: '3.8'
-
-# services:
-
-#   angular-app:
-#     build:
-#       context: ./
-#       dockerfile: dockerfile
-#     restart: always
-#     ports:
-#       - "80:80"
-#       - "443:443"
-#     container_name: portfolio-app
-#     networks:
-#       - my_network
-
-#   fastapi-app:
-#     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
-#     volumes:
-#       - ./API/venv/message.py:/app/message.py
-#       - ./requirements.txt:/app/requirements.txt
-     
-#     command: bash -c "python3 -m uvicorn message:app --host 0.0.0.0 --port 8000 --reload"
-#     ports:
-#       - "8000:8000"
-#     container_name: portfolio-api
-#     networks:
-#       - my_network
+    
 
   # nginx-proxy:
   #   image: nginx:latest
