@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+  certbot:
+    image: certbot/certbot
+    command: certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    container_name: certbot
+
+     
+    networks:
+      - my_network
   webserver:
     image: nginx:latest
     ports:
@@ -39,16 +49,7 @@ services:
     networks:
       - my_network
 
-  certbot:
-    image: certbot/certbot
-    command: certonly --webroot --webroot-path=/var/www/html --email wward246@gmail.com -d williamjwardiii.com
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-    container_name: certbot
-    depends_on:
-      - webserver  # Make sure webserver is running before Certbot
-    networks:
-      - my_network
+
 
 networks:
   my_network:
