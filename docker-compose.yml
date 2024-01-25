@@ -9,26 +9,16 @@ services:
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
     networks:
       - my_network
       
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
-    networks:
-      - my_network
-   
+  
   angular-app:    
     build:
       context: ./
       dockerfile: dockerfile
     restart: always
-    volumes:
-      - ./configurations/Client/docker-proxy:/etc/nginx/sites-available/docker-proxy
     
     ports:
       - "8080:80"
@@ -40,7 +30,6 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
-      - ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
       
