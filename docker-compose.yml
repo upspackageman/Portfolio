@@ -29,9 +29,10 @@ services:
     container_name: portfolio-api
     networks:
       - my_network
-    
 networks:
-  my_network
+  my_network:
+
+
   # nginx-proxy:
   #   image: nginx:latest
   #   ports:
@@ -44,4 +45,5 @@ networks:
   #     - angular-app
   #     - fastapi-app
   #   container_name: portfolio-proxy
+
 
