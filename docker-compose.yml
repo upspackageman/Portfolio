@@ -9,17 +9,18 @@ services:
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/cert/ssl/
-      - /etc/letsencrypt/archive/williamjwardiii.com/:/etc/cert/ssl/
+      - /etc/letsencrypt/:/etc/letsencrypt/
     networks:
       - my_network
-    container_name: portfolio-server
-  
+      
+ 
+   
   angular-app:    
     build:
       context: ./
       dockerfile: dockerfile
     restart: always
+    
     
     ports:
       - "8080:80"
@@ -31,6 +32,7 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
+      - ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
       
