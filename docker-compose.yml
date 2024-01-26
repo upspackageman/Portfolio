@@ -11,7 +11,8 @@ services:
       - ./configurations/Client/docker-proxy:/etc/nginx/sites-available/docker-proxy
       - ./cert/:/etc/cert/
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"
     container_name: portfolio-app
     networks:
       - my_network
