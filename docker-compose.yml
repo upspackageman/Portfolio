@@ -32,7 +32,6 @@ services:
     image: nginx:latest
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/
-      - ./nginx/html/:/usr/share/nginx/html/
        - ./cert/::/etc/nginx/cert/
     ports:
       - "8080:80"
