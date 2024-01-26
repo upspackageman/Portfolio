@@ -1,8 +1,11 @@
 
 
     server {
-        listen 80;
         server_name williamjwardiii.com;
+        listen 80;
+        listen 443 ssl;
+        ssl_certificate /etc/cert/certificate.crt;
+        ssl_certificate_key /etc/cert/private.key;
 
         location / {
             proxy_pass http://portfolio-app:8080/;
@@ -12,3 +15,6 @@
         }
     }
 
+  
+ 
+ 
