@@ -29,7 +29,7 @@ services:
     image: httpd:2.4.55
     container_name: apache-server
     volumes:
-      - /etc/apache2/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./etc/apache2/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - "443:443"
     networks:
