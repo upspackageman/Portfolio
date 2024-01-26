@@ -7,9 +7,6 @@ services:
       context: ./
       dockerfile: dockerfile
     restart: always
-    volumes:
-      - ./configurations/Client/default.conf:/etc/nginx/conf.d/default.conf
-      - ./cert/:/etc/cert/
     ports:
       - "80:80"
       - "443:443"
@@ -20,8 +17,7 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
-      - ./cert/:/etc/cert/
-      - ./configurations/API/docker-proxy:/etc/nginx/sites-available/docker-proxy
+
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
      
@@ -31,6 +27,20 @@ services:
     container_name: portfolio-api
     networks:
       - my_network
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/
+      - ./nginx/html/:/usr/share/nginx/html/
+       - ./cert/::/etc/nginx/cert/
+    ports:
+      - "8080:80"
+      - "8443:443"
+    container_name: portfolio-nginx
+    networks:
+      - my_network
+  
 networks:
   my_network:
 
