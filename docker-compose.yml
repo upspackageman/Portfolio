@@ -30,6 +30,7 @@ services:
     container_name: apache-server
     volumes:
       - /etc/apache2/sites-available/000-default.conf:/usr/local/apache2/conf/sites-available/000-default.conf
+      - /etc/letsencrypt/live/williamjwardiii.com/:/etc/letsencrypt/live/williamjwardiii.com/
     ports:
       - "443:443"
     networks:
