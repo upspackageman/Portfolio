@@ -33,6 +33,7 @@ services:
       - /etc/letsencrypt/live/williamjwardiii.com/:/etc/letsencrypt/live/williamjwardiii.com/
     ports:
       - "443:443"
+      - "80:80"
     networks:
       - my_network
 
