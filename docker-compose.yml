@@ -32,7 +32,7 @@ services:
     image: nginx:latest
     volumes:
        - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
-       - ./cert/:/etc/nginx/cert/
+       - ./cert/:/etc/cert/
     ports:
       - "80:80"
       - "8443:443"
