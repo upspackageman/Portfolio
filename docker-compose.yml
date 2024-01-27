@@ -15,8 +15,6 @@ services:
   fastapi-app:
     image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
     volumes:
-      - ./cert/:/etc/cert/
-      - ./configurations/API/docker-proxy:/etc/nginx/sites-available
       - ./API/venv/message.py:/app/message.py
       - ./requirements.txt:/app/requirements.txt
      
