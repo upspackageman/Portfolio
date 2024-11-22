@@ -23,11 +23,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit(): Promise<void> {
-    this.home_initScene();
-    this.home_animate();
-    this.removeHomeLink();
-    this.removeHomeLinkMobile();
-    this.redirect();
+    this.redirect().then(()=>{
+      this.removeHomeLink();
+      this.removeHomeLinkMobile();
+    setTimeout(()=>{
+      this.home_initScene();
+      this.home_animate();
+    },10);
+    
+   
+    });
   }
 
   removeHomeLink(){
@@ -36,6 +41,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     const about_link =  link.children[2]  as HTMLElement;
     const home_link =  link.children[0]  as HTMLElement;
     const contact_link =  link.children[3]  as HTMLElement;
+
+    
     proj_link.style.display='block';
     about_link.style.display='none';
     home_link.style.display='none';

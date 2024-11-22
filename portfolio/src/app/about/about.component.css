@@ -249,6 +249,14 @@
 }
 
 
+#about-main-page{
+  position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 .about-selection {
   display: flex;
   justify-content: center;
@@ -262,10 +270,12 @@
 .btn-about {
   font-size: 35px;
   width: 300px;
+  font-weight: 300;
   border-style: solid;
   color: #fff;
   border-color: #fff;
-  border-width: 3px;
+  border-radius:.25rem;
+  border-width: 1px;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -277,8 +287,8 @@
 }
 
 .btn-about:hover {
-  color: #e0d9d9;
-  border-color: #e0d9d9;
+  color: #f1ebeb;
+  background: rgba(255, 255, 255, .1);
 }
 
 dialog a {
@@ -298,7 +308,7 @@ dialog a {
 }
 
 .about-details-mobile a {
-  font-size: 28px;
+  font-size: 18px;
   position: relative;
   left: 80%;
   color: #ffffffc6;
@@ -312,6 +322,11 @@ dialog a {
 .about-details-mobile a:hover {
   color: #c9c1c1;
 
+}
+
+.about-details-mobile h3{
+  font-weight: 400;
+  letter-spacing: 1.3px;
 }
 
 .about-details-mobile h2 {
@@ -405,8 +420,9 @@ dialog a {
   position: relative;
   left: 90%;
   border-style: solid;
+  border-radius:.25rem;
   padding: 3px 5px 3px 5px;
-  border-width: 2px;
+  border-width: 1px;
   font-size: 1.5rem;
   cursor: pointer;
   display: inline;

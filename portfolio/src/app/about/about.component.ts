@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
     this.removeAboutLink();
     this.removeAboutLinkMobile();
     this.initScene();
-    this. redirect();
+    //this. redirect();
     this.initHideDetails();
   }
 
@@ -288,6 +288,7 @@ export class AboutComponent implements OnInit {
   //  const fick = document.getElementById("threejs-about-container") as HTMLBaseElement;
  //   fick.style.display='none';
     const link = document.querySelector('app-navbar .navbar .navbar-nav ') as HTMLElement;
+    
     const about_link = link.children[2]  as HTMLElement;
     const proj_link =  link.children[1]  as HTMLElement;
     const home_link =  link.children[0]  as HTMLElement;

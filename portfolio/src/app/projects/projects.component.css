@@ -93,12 +93,14 @@
   .fade-in-top {
       -webkit-animation: fade-in-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
               animation: fade-in-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+              animation-delay: 400ms;
   }
   
   
   .fade-in-left {
       -webkit-animation: fade-in-left 0.15s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
               animation: fade-in-left 0.15s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+              animation-delay: 300ms;
   }
 
 
@@ -137,13 +139,17 @@
   .container{
     color:#000000;
   }
+
+  .container h1{
+    font-weight: 400;
+  }
   
   .container a{
-    color:#777;
+    color:#000000;
   }
   
   .container a:hover{
-    color:#888;
+    color:#707070;
   }
   
   .project-selection{
@@ -154,6 +160,8 @@
     left:2.5%;
     width:300px;
   }
+
+  
   
   .project-selection .container{
     display: flex;
@@ -174,6 +182,11 @@
       letter-spacing: 1.5px;
       font-weight: 300;
   }
+
+
+  .project-selection .btn-project:hover{
+   color:#54555a;
+}
 
   .project-selection .btn-project h5{
     font-weight: 400;
@@ -247,6 +260,24 @@
   #project-three .container hr:not([size]) {
     height: 2.5px;
   }
+
+
+  #project-four{
+    background-color: rgba(0, 0, 0,0);
+    position:absolute;
+    width:60%;
+    height:800px;
+    top:10%;
+    left:30%;
+  }
+  
+  #project-four .container{
+    padding:2%;
+  }
+  
+  #project-four .container hr:not([size]) {
+    height: 2.5px;
+  }
   .project-details-mobile{
     margin: 10% 5% 5% 5%;
   }
@@ -264,6 +295,7 @@
   
   .project-details-mobile h2{
     margin-bottom: 5%;
+    margin-top: 10%;
   }
   
   .project-details-mobile-text{
@@ -360,8 +392,8 @@
     .btn-project-mobile{
       font-size:35px;
       border-style:solid;
-      color:#777;
-      border-color: #777;
+      color:#3e3d3d;
+      border-color: #000000;
       border-width: 3px;
       padding-top: 5px;
       padding-bottom: 5px;
@@ -408,5 +440,7 @@
       color: #363434 !important;
     }
     
-    .btn-project-mobile{font-size:1.55rem; align-self: center; width: 250px;}
+    .btn-project-mobile{font-size:1.55rem; align-self: center; width: 250px;border-radius: .25rem;
+      border-width: 1px;
+      border-style: groove;}
   }

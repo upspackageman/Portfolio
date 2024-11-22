@@ -7,21 +7,25 @@
       <h5>KnowledgeCity:</h5>
       <h6>SCORM Downloader</h6>
     </a>
+    <a class="btn-project" (click)="selectedProject(4)">
+      <h5>Auto-Complaints</h5>
+      <h6>Web Application</h6>
+    </a>
     <a class="btn-project" (click)="selectedProject(2)">
       <h5>Burke Real Estate:</h5>
       <h6>Web/Desktop Application</h6>
-
     </a>
     <a class="btn-project" (click)="selectedProject(3)">
       <h5>Urgent Care Bumper Repair</h5>
       <h6>Web Application</h6>
     </a>
+   
   </div>
 </div>
 
 <div id="project-one">
   <div class="container fade-in-left">
-    <h1>SCORM Downloader</h1>
+    <h1>KnowledgeCity: SCORM Downloader</h1>
     <hr>
     <div class="fade-in-top project-details-mobile-text">
       <p>
@@ -51,7 +55,7 @@
         </ul>
         <code><a href="https://www.knowledgecity.com" target="_blank">View KnowledgeCity</a></code>
         <p></p>
-        <code><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html#" target="_blank">View Project</a></code>
+        <code *ngIf="toshow"><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html#" target="_blank">View Project</a></code>
       
        
     
@@ -62,7 +66,7 @@
 </div>
 <div id="project-two">
   <div class="container fade-in-left">
-    <h1>Web/Desktop Application</h1>
+    <h1>Burke Real Estate: Web/Desktop Application</h1>
     <hr>
     <div class="fade-in-top project-details-mobile-text">
       <p>
@@ -79,14 +83,14 @@
       <p>
         Integrated Docker for efficient deployment and management of the entire application stack.
       </p>
-      <code><a href="http://45.32.71.33:8080/" target="_blank">View Beta</a></code>
+      <code><a href="https://williamjwardiii.com/real-estate/" target="_blank">View Beta</a></code>
     </div>
 
   </div>
 </div>
 <div id="project-three">
   <div class="container fade-in-left">
-    <h1>Web Application</h1>
+    <h1>Urgent Care Bumper Repair: Web Application</h1>
     <hr>
     <div class="fade-in-top project-details-mobile-text">
       <p>
@@ -112,9 +116,28 @@
 </div>
 
 
+<div id="project-four">
+  <div class="container fade-in-left">
+    <h1>Auto-Complaints</h1>
+    <hr>
+    <div class="fade-in-top project-details-mobile-text">
+      <p>
+        Auto-Complaints.com is an online automotive complaint resources, based on complaint data submitted by NHTSA and other governent agencies. The complaints are organized into groups with data published by vehicle, vehicle component, complaints and recalls.
+      </p>
+      
+      <code><a href="https://auto-complaints.com" target="_blank">View Website</a></code>
+    </div>
+    
+  </div>
+</div>
+
+
 <div id="mobile-selection" class="project-mobile-selection">
   <a class="btn-project-mobile" (click)="openProjectDetails(1)">
     KnowledgeCity
+  </a>
+  <a class="btn-project-mobile" (click)="openProjectDetails(4)">
+    Auto-Complaints
   </a>
   <a class="btn-project-mobile" (click)="openProjectDetails(2)">
     Burke Real Estate
@@ -122,6 +145,7 @@
   <a class="btn-project-mobile" (click)="openProjectDetails(3)">
     Urgent Care Bumper Repair
   </a>
+  
 </div>
 
 <dialog class="project-details-mobile" id="project-one-myDialog">
@@ -156,7 +180,7 @@
       </ul>
       <code><a href="https://www.knowledgecity.com" target="_blank">View KnowledgeCity</a></code>
       <p></p>
-      <code><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html#" target="_blank">View Project</a></code>
+      <code *ngIf="toshow"><a href="https://cdn0.knowledgecity.com/vendors/kc/scormgenerator.html#" target="_blank">View Project</a></code>
       
   </div>
 </dialog>
@@ -180,7 +204,7 @@
     <p>
       Integrated Docker for efficient deployment and management of the entire application stack.
     </p>
-    <code><a href="http://45.32.71.33:8080/" target="_blank">View Beta</a></code>
+    <code><a href="https://williamjwardiii.com/real-estate/" target="_blank">View Application</a></code>
   </div>
 
 </dialog>
@@ -207,6 +231,33 @@
       interactions, implementing effective front-end architecture to ensure intuitive user experiences.
 
     </p>
-    <code><a href="https://upspackageman.github.io/urgentcarebumperrepair/" target="_blank">View Project</a></code>
+    <code><a href="https://upspackageman.github.io/urgentcarebumperrepair/" target="_blank">View Application</a></code>
+  </div>
+</dialog>
+
+
+<dialog class="project-details-mobile" id="project-four-myDialog">
+  <a (click)="closeProjectDetails()">Close</a>
+  <h2>Web Application: Web/Desktop Application</h2>
+  <hr>
+  <div class="fade-in-top project-details-mobile-text" id="project-three-myDialog-scroll">
+    <p>
+      Lead developer to a React PHP application, I played a pivotal role in driving user experience (UX) and search
+      engine optimization (SEO) initiatives, resulting in a substantial 25% increase in website traffic. Leveraging my
+      expertise in React, TypeScript, Node, and PHP, I implemented performance optimizations that led to a 20%
+      reduction in page load times.
+    </p>
+    <p>
+      Additionally, I took charge of introducing a new feature, contributing to a noteworthy 15% improvement in user
+      engagement.
+      My responsibilities extended to collaborating with management to gather requirements, define tasks, scope
+      sprints, review pull requests, and provide support to team members.
+    </p>
+    <p>
+      I prioritized UX and SEO-oriented objectives to enhance customer retention and designed user-centric
+      interactions, implementing effective front-end architecture to ensure intuitive user experiences.
+
+    </p>
+    <code><a href="https://auto-complaints.com" target="_blank">View Site</a></code>
   </div>
 </dialog>

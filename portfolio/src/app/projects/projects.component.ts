@@ -14,6 +14,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private cube!: THREE.Mesh;
   private frameId: number | null = null;
   private controls!: OrbitControls;
+  toshow:boolean= false;
 
   constructor(private ngZone: NgZone) { }
   async ngOnDestroy(): Promise<void> {
@@ -24,12 +25,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   async ngOnInit(): Promise<void> {
     this.removeProjectLinkMobile();
-    this.removeProjectLink();
-    this.project_initScene();
-    this.project_animate();
+      this.removeProjectLink();
     this.redirect();
-    this.selectedProject();
-    this.project_isMobile();
+    
   }
 
   @HostListener('window:resize', ['$event'])
@@ -88,13 +86,22 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   async redirect() {
     if (!localStorage.getItem('_direct')) {
+    
       localStorage.setItem('_direct', 'no reload')
+     
       setTimeout(() => {
         location.reload();
+        this.project_isMobile();
+        this.selectedProject(5);
+        this.project_animate();
       }
-        , 1);
+        , 0);
     } else {
-      localStorage.removeItem('_direct');
+        localStorage.removeItem('_direct');
+        this.project_initScene();
+        this.project_animate();
+        this.selectedProject();
+        this.project_isMobile();
 
 
     }
@@ -132,6 +139,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
 
   removeProjectLink(){
+
     const link = document.querySelector('app-navbar .navbar .navbar-nav ') as HTMLElement;
     const proj_link = link.children[1]  as HTMLElement;
     const about_link =  link.children[2]  as HTMLElement;
@@ -160,12 +168,14 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     const proj1 = document.getElementById('project-one-myDialog') as HTMLDialogElement;
     const proj2 = document.getElementById('project-two-myDialog') as HTMLDialogElement;
     const proj3 = document.getElementById('project-three-myDialog') as HTMLDialogElement;
+    const proj4 = document.getElementById('project-four-myDialog') as HTMLDialogElement;
     const mobile_selct =  document.getElementById('mobile-selection') as HTMLDialogElement;
 
 
       proj1.close();
       proj2.close();
       proj3.close();
+      proj4.close();
       mobile_selct.style.display='flex';
 
   }
@@ -174,10 +184,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     const proj1 = document.getElementById('project-one-myDialog') as HTMLDialogElement;
     const proj2 = document.getElementById('project-two-myDialog') as HTMLDialogElement;
     const proj3 = document.getElementById('project-three-myDialog') as HTMLDialogElement;
+    const proj4 = document.getElementById('project-four-myDialog') as HTMLDialogElement;
     const mobile_selct =  document.getElementById('mobile-selection') as HTMLDialogElement;
     const scroll1 = document.getElementById('project-one-myDialog-scroll') as HTMLDialogElement;
     const scroll2 = document.getElementById('project-two-myDialog-scroll') as HTMLDialogElement;
     const scroll3 = document.getElementById('project-three-myDialog-scroll') as HTMLDialogElement;
+    const scroll4 = document.getElementById('project-four-myDialog-scroll') as HTMLDialogElement;
     // console.log(getscroll[0]);
     // console.log(getscroll[0].scrollTop = 0);
     // for(let i = 0; i < getscroll.length; i++){
@@ -211,30 +223,56 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       scroll3.scroll(0, 0);
       mobile_selct.style.display='none';
     }
+    if(num===4){
+      mobile_selct.style.display='none';
+      proj1.close();
+      proj2.close();
+      proj3.close();
+      proj4.showModal();
+      scroll4.scroll(0, 0);
+      
+    }
 
   }
 
   selectedProject(num:number =1){
-    const proj1 = document.getElementById('project-one');
-    const proj2 = document.getElementById('project-two');
-    const proj3 = document.getElementById('project-three');
-    
+    const proj1 = document.getElementById('project-one') as HTMLElement ;
+    const proj2 = document.getElementById('project-two')  as HTMLElement;
+    const proj3 = document.getElementById('project-three')  as HTMLElement;
+    const proj4 = document.getElementById('project-four')  as HTMLElement;
+    if ((num===5)){
+      proj1.style.display='none';
+      proj2.style.display = 'none';
+      proj3.style.display = 'none';
+      proj4.style.display = 'none';
+    }
 
-    if(num===1 && proj1 && proj2 && proj3){
+    if(num===1){
       proj1.style.display='flex';
       proj2.style.display = 'none';
       proj3.style.display = 'none';
+      proj4.style.display = 'none';
 
     }
-    if(num==2 && proj1 && proj2 && proj3){
+    if(num===2){
       proj1.style.display='none';
       proj2.style.display = 'flex';
       proj3.style.display = 'none';
+      proj4.style.display = 'none';
     }
-    if(num==3 && proj1 && proj2 && proj3){
+    if(num===3){
       proj1.style.display='none';
       proj2.style.display = 'none';
       proj3.style.display = 'flex';
+      proj4.style.display = 'none';
+    }
+
+    if(num===4){
+      proj1.style.display='none';
+      proj2.style.display = 'none';
+      proj3.style.display = 'none';
+      proj4.style.display = 'flex';
+      console.log(proj4)
     }
 
   }

@@ -1,19 +1,22 @@
 <div class="stars" id="threejs-about-container"></div>
 <!-- <div class="disp"></div> -->
-<div id="select-about" class="about-selection puff-in-center ">
-  <a class="btn-about" (click)="openAboutDetails(1)">
-    About Me
-  </a>
-  <a class="btn-about" (click)="openAboutDetails(2)">
-    Skills
-  </a>
-  <a class="btn-about" (click)="openAboutDetails(3)">
-    Work Experience
-  </a>
-</div>
+ <section id="about-main-page">
+  <div id="select-about" class="about-selection puff-in-center ">
+    <a class="btn-about" (click)="openAboutDetails(1)">
+      About Me
+    </a>
+    <a class="btn-about" (click)="openAboutDetails(2)">
+      Skills
+    </a>
+    <a class="btn-about" (click)="openAboutDetails(3)">
+      Work Experience
+    </a>
+  </div>
+ </section>
+
 
 <dialog class="about-details-mobile fade-in-left" id="about-one-myDialog">
-  <a (click)="closeAboutDetails()">&#10006;</a>
+  <a (click)="closeAboutDetails()">close</a>
   <h2> A little about me and my background</h2>
   <hr>
   <div class="fade-in-top about-details-mobile-text">
@@ -33,7 +36,7 @@
 </dialog>
 
 <dialog class="about-details-mobile fade-in-left" id="about-two-myDialog">
-  <a (click)="closeAboutDetails()">&#10006;</a>
+  <a (click)="closeAboutDetails()">close</a>
   <h2>Skills</h2>
   <hr>
   <div class="fade-in-top about-details-mobile-text" id="desktopAccordion">
@@ -335,7 +338,7 @@
           <div class="accordion-body">
             <p>Proficient in automation, scripting, and backend development, with a focus on spearheading initiatives to streamline tasks and enhance operational efficiency.</p>
             <p>Experienced in crafting robust server-side logic and APIs for web applications, particularly skilled in utilizing Python and integrating with FastAPI.</p>
-            <p>Versatile in leveraging a comprehensive technology stack, including Python, C#, .NET Core, WebAPI, and FastAPI, to deliver innovative and tailored solutions.</p>
+            <p>Versatile in leveraging a comprehensive technology stack, including Python, PHP, C# .NET Core WebAPI, and FastAPI, to deliver innovative and tailored solutions.</p>
             <p>Demonstrated ability to lead automation and scripting efforts, consistently contributing to streamlined workflows and delivering impactful solutions for diverse clients.</p>
           </div>
         </div>
@@ -473,7 +476,7 @@
 </dialog>
 
 <dialog class="about-details-mobile fade-in-left" id="about-three-myDialog">
-  <a (click)="closeAboutDetails()">&#10006;</a>
+  <a (click)="closeAboutDetails()">close</a>
   <h2>Work Experience</h2>
   <hr>
   <div class="fade-in-top work-details-mobile-text">

@@ -23,11 +23,15 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit(): Promise<void> {
-    this.removeContactLinkMobile();
-    this.removeContactLink();
-    this.initScene();
-    this.animate();
     this.redirect();
+    setTimeout(()=>{
+      this.removeContactLinkMobile();
+      this.removeContactLink();
+      this.initScene();
+      this.animate();
+    },1)
+   
+    
 
   }
 

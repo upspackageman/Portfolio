@@ -25,6 +25,8 @@
   ::ng-deep app-navbar a{
     color:#fff !important;
   }
+
+  
   
   ::ng-deep app-navbar a{
     color:#fff !important;
@@ -37,14 +39,37 @@
   ::ng-deep app-navbar #nav-icon2 span{
     background:#fff !important;
   }
+
+
+  .home-banner{
+    max-width: 320px !important;
+    border-color: #c1b0d1;
+    border-style:outset;
+    border-width:1px;
+    padding: 40px;
+    position: fixed;
+    background-color: rgba(62, 98, 176, 0.431);
+    top:calc(50% - 160px);
+    left: calc(50% - 160px);
+    border-radius: .25rem;
+  }
+
+ 
+
+  .home-banner:hover{
+    border-color: #f1eef3;
+    border-style:groove;
+    cursor:default;
+   
+  
+  }
   
   
-  
-  #home{
+  /* #home{
     height: 800px;
     width: 100%;
-    background-color: aquamarine;
-  }
+    background-color: rgb(22, 115, 172);
+  } */
   /* #threejs-home-container{
   
   } */
@@ -52,24 +77,22 @@
   .tracking-in-expand {
       -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
               animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+              animation-delay: 500ms;
   }
   
   
   .about-btn{
   
-    position: absolute;
+   
     font-size:35px;
-    top: 40%;
-    left: 45%;
+    font-weight: 300;
+    padding: 5px 50px 5px 50px;
     text-decoration: none;
     border-style:solid;
+    border-radius: .25rem;
     color: #fff;
     border-color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-width: 3px;
+    border-width: 1px;
   }
   
   .about-btn:hover{
